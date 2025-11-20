@@ -1,0 +1,2163 @@
+{
+  "info": {
+    "name": "PAK Middleware API \u2013 Full Collection V4",
+    "_postman_id": "418001ce-2246-41f3-92a1-76e9d487e5e4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Full mock-ready collection V4. Relevant error examples added to each request (Option 2)."
+  },
+  "item": [
+    {
+      "name": "Institutions",
+      "item": [
+        {
+          "name": "GET Institutions List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/institutions/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "institutions",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"institution_id\": \"SBP\",\n      \"institution_name\": \"State Bank of Pakistan\"\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_SEARCH",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/institutions/list?search=[]"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid search parameter\",\n    \"details\": {\n      \"field\": \"search\",\n      \"datatype\": \"institutions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"invalid_format\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Institution",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/institutions",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "institutions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"institution_id\": \"SBP\",\n    \"institution_name\": \"State Bank of Pakistan\",\n    \"contact_email\": \"info@sbp.pk\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_REQUIRED_FIELD_MISSING",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/institutions?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"institution_id is required\",\n    \"details\": {\n      \"field\": \"institution_id\",\n      \"datatype\": \"institutions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"not_null\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_EMAIL",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/institutions?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid email format\",\n    \"details\": {\n      \"field\": \"contact_email\",\n      \"datatype\": \"institutions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"email\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_409_DUPLICATE_ID",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/institutions?"
+                }
+              },
+              "status": "ERROR",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 409,\n    \"message\": \"Duplicate Institution ID\",\n    \"details\": {\n      \"field\": \"institution_id\",\n      \"datatype\": \"institutions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"unique\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Institution",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/institutions/{{institution_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "institutions",
+                "{{institution_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"institution_id\": \"SBP\",\n    \"institution_name\": \"State Bank of Pakistan\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/institutions/{{institution_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Institution not found\",\n    \"details\": {\n      \"field\": \"institution_id\",\n      \"datatype\": \"institutions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntegrationAudit",
+      "item": [
+        {
+          "name": "GET Audit List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/audit/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "audit",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"audit_id\": 100,\n      \"institution_id\": \"SBP\",\n      \"operation\": \"create\",\n      \"validation_status\": \"PENDING\"\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_INSTITUTION",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/audit/list?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Institution reference invalid\",\n    \"details\": {\n      \"field\": \"institution_id\",\n      \"datatype\": \"integration_audit\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Audit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/audit",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "audit"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"audit_id\": 100,\n    \"institution_id\": \"SBP\",\n    \"operation\": \"create\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_OPERATION",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/audit?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid operation\",\n    \"details\": {\n      \"field\": \"operation\",\n      \"datatype\": \"integration_audit\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"enum(create,update,delete,send)\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Audit",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/audit/{{audit_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "audit",
+                "{{audit_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"audit_id\": 100,\n    \"institution_id\": \"SBP\",\n    \"operation\": \"create\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/audit/{{audit_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Audit not found\",\n    \"details\": {\n      \"field\": \"audit_id\",\n      \"datatype\": \"integration_audit\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationLogs",
+      "item": [
+        {
+          "name": "GET Logs List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/logs/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "logs",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"log_id\": 2001,\n      \"entity_type\": \"instrument\",\n      \"validation_message\": \"OK\"\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_SEARCH",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/logs/list?search=[]"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid search param\",\n    \"details\": {\n      \"field\": \"search\",\n      \"datatype\": \"validation_log\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"invalid_format\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Log",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/logs",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "logs"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"log_id\": 2001,\n    \"entity_type\": \"instrument\",\n    \"validation_message\": \"OK\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_ENTITY_TYPE",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/logs?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid entity type\",\n    \"details\": {\n      \"field\": \"entity_type\",\n      \"datatype\": \"validation_log\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"enum(instrument,payment,subscription,serie,rate)\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Log",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/logs/{{log_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "logs",
+                "{{log_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"log_id\": 2001,\n    \"entity_type\": \"instrument\",\n    \"validation_message\": \"OK\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/logs/{{log_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Log not found\",\n    \"details\": {\n      \"field\": \"log_id\",\n      \"datatype\": \"validation_log\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Instruments",
+      "item": [
+        {
+          "name": "GET Instruments List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/instruments/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "instruments",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"instrument_id\": \"SBP-BND-000001\",\n      \"name\": \"MTB JUNE 2025\"\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_PAGE",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments/list?page=abc"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid page number\",\n    \"details\": {\n      \"field\": \"page\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"integer\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Instrument",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/instruments",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "instruments"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"instrument_id\": \"SBP-BND-000001\",\n    \"institution_id\": \"SBP\",\n    \"original_inst_id\": \"MTB-9821\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_REQUIRED_FIELD_MISSING",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"instrument_id is required\",\n    \"details\": {\n      \"field\": \"instrument_id\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"not_null\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_422_FK_NOT_FOUND",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Institution reference invalid\",\n    \"details\": {\n      \"field\": \"institution_id\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"fk_must_exist\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_422_AMOUNT_INVALID",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Amount must be > 0\",\n    \"details\": {\n      \"field\": \"amt\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"gt_0\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_DATE_ORDER",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"issue_date must be <= maturity_date\",\n    \"details\": {\n      \"field\": \"d_sign/d_final_maturity\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"date_order\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_409_DUPLICATE_ID",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 409,\n    \"message\": \"Duplicate instrument_id\",\n    \"details\": {\n      \"field\": \"instrument_id\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"unique\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Update Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/instruments/update-request",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "instruments",
+                "update-request"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"instrument_id\": \"SBP-BND-000001\",\n    \"updated_fields\": {\n      \"d_final_maturity\": \"2026-06-21\"\n    },\n    \"reason\": \"Correction\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_UPDATE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments/update-request?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Update not allowed for non-sent record\",\n    \"details\": {\n      \"field\": \"instrument_id\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist_sent\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Bulk Create Instruments",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/instruments/bulk-create",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "instruments",
+                "bulk-create"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"instrument_id\": \"SBP-BND-000002\"\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_BULK_ROW_FAILED",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments/bulk-create?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Row 2: instrument_id missing\",\n    \"details\": {\n      \"field\": \"bulk_row\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"row_errors\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Instrument",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/instruments/{{instrument_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "instruments",
+                "{{instrument_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"instrument_id\": \"SBP-BND-000001\",\n    \"status\": \"STAGED\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments/{{instrument_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Instrument not found\",\n    \"details\": {\n      \"field\": \"instrument_id\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE Instrument",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/instruments/{{instrument_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "instruments",
+                "{{instrument_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"instrument_id\": \"SBP-BND-000001\",\n    \"deleted\": true\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_DELETE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{SERVER_URL}}/instruments/{{instrument_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Cannot delete instrument already SENT\",\n    \"details\": {\n      \"field\": \"instrument_id\",\n      \"datatype\": \"instruments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"cannot_delete_sent\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Series",
+      "item": [
+        {
+          "name": "GET Series List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"serie_id\": \"SBP-BND-000001\",\n      \"serie_amt\": 2000000000\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_SERIE_ID",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/list?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid serie_id format\",\n    \"details\": {\n      \"field\": \"serie_id\",\n      \"datatype\": \"series\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"invalid_format\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Serie",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"serie_id\": \"SBP-BND-000001\",\n    \"serie_amt\": 2000000000\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_SERIE_AMT",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"serie_amt must be > 0\",\n    \"details\": {\n      \"field\": \"serie_amt\",\n      \"datatype\": \"series\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"gt_0\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Serie",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/{{serie_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "{{serie_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"serie_id\": \"SBP-BND-000001\",\n    \"status\": \"STAGED\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/{{serie_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Serie not found\",\n    \"details\": {\n      \"field\": \"serie_id\",\n      \"datatype\": \"series\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE Serie",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/{{serie_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "{{serie_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"serie_id\": \"SBP-BND-000001\",\n    \"deleted\": true\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_DELETE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/{{serie_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Cannot delete series with payments\",\n    \"details\": {\n      \"field\": \"serie_id\",\n      \"datatype\": \"series\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"cannot_delete_has_payments\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Patterns",
+      "item": [
+        {
+          "name": "GET Patterns List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/patterns/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "patterns",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"serie_pat_id\": \"SBP-BND-000001\",\n      \"percentage\": 100\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_PERIODICITY",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/patterns/list?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid periodicity\",\n    \"details\": {\n      \"field\": \"cd_periodicity\",\n      \"datatype\": \"serie_patterns\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"enum(MONTHLY,QUARTERLY,ANNUAL)\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Pattern",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/patterns",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "patterns"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"serie_pat_id\": \"SBP-BND-000001\",\n    \"percentage\": 100\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_DATE",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/patterns?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid date format\",\n    \"details\": {\n      \"field\": \"d_first_payment\",\n      \"datatype\": \"serie_patterns\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"date_format\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Pattern",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/patterns/{{pattern_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "patterns",
+                "{{pattern_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"serie_pat_id\": \"SBP-BND-000001\",\n    \"status\": \"STAGED\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/patterns/{{pattern_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Pattern not found\",\n    \"details\": {\n      \"field\": \"pattern_id\",\n      \"datatype\": \"serie_patterns\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE Pattern",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/patterns/{{pattern_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "patterns",
+                "{{pattern_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"serie_pat_id\": \"SBP-BND-000001\",\n    \"deleted\": true\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_DELETE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/patterns/{{pattern_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Cannot delete pattern in use\",\n    \"details\": {\n      \"field\": \"pattern_id\",\n      \"datatype\": \"serie_patterns\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"cannot_delete_in_use\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InterestRateApp",
+      "item": [
+        {
+          "name": "GET Interest Rate App List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/interest-application/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "interest-application",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"int_rate_app_id\": \"SBP-BND-000001-IRA-1\",\n      \"rate_pcent\": 8.5\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_INT_TYPE",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/interest-application/list?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid interest type\",\n    \"details\": {\n      \"field\": \"cd_int_typ\",\n      \"datatype\": \"int_rate_application\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"enum(FIXED,VARIABLE)\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Interest Rate App",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/interest-application",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "interest-application"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"int_rate_app_id\": \"SBP-BND-000001-IRA-1\",\n    \"rate_pcent\": 8.5\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_RATE",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/interest-application?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"rate_pcent must be > 0\",\n    \"details\": {\n      \"field\": \"rate_pcent\",\n      \"datatype\": \"int_rate_application\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"gt_0\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Interest Rate App",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/interest-application/{{int_rate_app_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "interest-application",
+                "{{int_rate_app_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"int_rate_app_id\": \"SBP-BND-000001-IRA-1\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/interest-application/{{int_rate_app_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Interest Rate App not found\",\n    \"details\": {\n      \"field\": \"int_rate_app_id\",\n      \"datatype\": \"int_rate_application\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE Interest Rate App",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/interest-application/{{int_rate_app_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "interest-application",
+                "{{int_rate_app_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"int_rate_app_id\": \"SBP-BND-000001-IRA-1\",\n    \"deleted\": true\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_DELETE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/interest-application/{{int_rate_app_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Cannot delete interest rate app in use\",\n    \"details\": {\n      \"field\": \"int_rate_app_id\",\n      \"datatype\": \"int_rate_application\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"cannot_delete_in_use\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Subscriptions",
+      "item": [
+        {
+          "name": "GET Subscriptions List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/subscriptions/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "subscriptions",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"subscription_id\": \"SBP-BND-000001-SUB-1\",\n      \"receipts_amount\": 2000000000\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_DATE",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions/list?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid tr_date\",\n    \"details\": {\n      \"field\": \"tr_date\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"date_format\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Subscription",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/subscriptions",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "subscriptions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"subscription_id\": \"SBP-BND-000001-SUB-1\",\n    \"receipts_amount\": 2000000000\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_EXEC_MODE",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid execution mode\",\n    \"details\": {\n      \"field\": \"cd_exec_mode\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"enum(1,6)\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_AMOUNT",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"receipts_amount must be > 0\",\n    \"details\": {\n      \"field\": \"receipts_amount\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"gt_0\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Subscription Update Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/subscriptions/update-request",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "subscriptions",
+                "update-request"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"subscription_id\": \"SBP-BND-000001-SUB-1\",\n    \"updated_fields\": {\n      \"receipts_amount\": 1500000000\n    },\n    \"reason\": \"Correction\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions/update-request?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Subscription not found\",\n    \"details\": {\n      \"field\": \"subscription_id\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Bulk Create Subscriptions",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/subscriptions/bulk-create",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "subscriptions",
+                "bulk-create"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"subscription_id\": \"SBP-BND-000002\",\n      \"receipts_amount\": 1000000000\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_BULK_ROW_FAILED",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions/bulk-create?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Row 3: receipts_amount invalid\",\n    \"details\": {\n      \"field\": \"bulk_row\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"row_errors\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Subscription",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/subscriptions/{{subscription_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "subscriptions",
+                "{{subscription_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"subscription_id\": \"SBP-BND-000001-SUB-1\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions/{{subscription_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Subscription not found\",\n    \"details\": {\n      \"field\": \"subscription_id\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE Subscription",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/subscriptions/{{subscription_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "subscriptions",
+                "{{subscription_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"subscription_id\": \"SBP-BND-000001-SUB-1\",\n    \"deleted\": true\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_DELETE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/subscriptions/{{subscription_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Cannot delete subscription with receipts\",\n    \"details\": {\n      \"field\": \"subscription_id\",\n      \"datatype\": \"subscriptions\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"cannot_delete_has_receipts\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "GET Payments List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/payments/list",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "payments",
+                "list"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": [\n    {\n      \"payment_id\": \"SBP-BND-000001-PAY-1\",\n      \"amount\": 2000000000\n    }\n  ],\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_PAYMENT_MODE",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/payments/list?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Invalid payment mode\",\n    \"details\": {\n      \"field\": \"payment_mode\",\n      \"datatype\": \"payments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"enum(BANK_TRANSFER,CASH,CHEQUE)\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Create/Update Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/payments",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "payments"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"payment_id\": \"SBP-BND-000001-PAY-1\",\n    \"amount\": 2000000000\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_AMOUNT",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/payments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"amount must be > 0\",\n    \"details\": {\n      \"field\": \"amount\",\n      \"datatype\": \"payments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"gt_0\"\n    }\n  }\n}"
+            },
+            {
+              "name": "ERR_422_INVALID_PAYMENT_DATES",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/payments?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"sch_payment_date must be <= made_date\",\n    \"details\": {\n      \"field\": \"sch_payment_date/made_date\",\n      \"datatype\": \"payments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"date_order\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST Payment Update Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/payments/update-request",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "payments",
+                "update-request"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"payment_id\": \"SBP-BND-000001-PAY-1\",\n    \"updated_fields\": {\n      \"amount\": 1500000000\n    },\n    \"reason\": \"Correction\"\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/payments/update-request?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Payment not found\",\n    \"details\": {\n      \"field\": \"payment_id\",\n      \"datatype\": \"payments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET Single Payment",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/payments/{{payment_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "payments",
+                "{{payment_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"payment_id\": \"SBP-BND-000001-PAY-1\",\n    \"amount\": 2000000000\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_NOT_FOUND",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/payments/{{payment_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Payment not found\",\n    \"details\": {\n      \"field\": \"payment_id\",\n      \"datatype\": \"payments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"must_exist\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE Payment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "idempotency_key",
+                "value": "{{idempotency_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{SERVER_URL}}/series/payments/{{payment_id}}",
+              "host": [
+                "{{SERVER_URL}}"
+              ],
+              "path": [
+                "series",
+                "payments",
+                "{{payment_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "SUCCESS_200_DEFAULT",
+              "originalRequest": {
+                "method": "GET"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"result\": {\n    \"code\": 200,\n    \"message\": \"Operation completed ...\",\n    \"details\": {}\n  },\n  \"data\": {\n    \"payment_id\": \"SBP-BND-000001-PAY-1\",\n    \"deleted\": true\n  },\n  \"meta\": {\n    \"timestamp\": \"2025-11-19T02:21:18Z\",\n    \"page\": 1,\n    \"size\": 25,\n    \"totalElements\": 1\n  }\n}"
+            },
+            {
+              "name": "ERR_422_DELETE_NOT_ALLOWED",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{SERVER_URL}}/series/payments/{{payment_id}}?"
+                }
+              },
+              "status": "ERROR",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": false,\n  \"id_key\": \"{{idempotency_key}}\",\n  \"result\": {\n    \"code\": 422,\n    \"message\": \"Cannot delete reconciled payment\",\n    \"details\": {\n      \"field\": \"payment_id\",\n      \"datatype\": \"payments\",\n      \"accountable_code\": \"\",\n      \"validation_rule\": \"cannot_delete_reconciled\"\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "// collection pre-request placeholder"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          "// collection test placeholder"
+        ]
+      }
+    }
+  ]
+}

@@ -10,15 +10,15 @@ servers:
   description: Render Prism Mock (user-provided)
 paths:
   /health:
-  get:
-    summary: Healthcheck
-    responses:
-      '200':
-        description: OK
-        content:
-          application/json:
-            example:
-              status: ok
+    get:
+      summary: Healthcheck
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                status: ok
   /institutions/list:
     get:
       tags:

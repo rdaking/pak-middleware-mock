@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: "PAK Middleware API \u2013 Full Collection V4"
+  title: PAK Middleware API – Full Collection V4
   description: Full mock-ready collection V4. Relevant error examples added to each
     request (Option 2).
   version: 1.0.0
@@ -9,18 +9,23 @@ servers:
 - url: https://pak-middleware-mock.onrender.com
   description: Render Prism Mock (user-provided)
 paths:
+  /health:
+  get:
+    summary: Healthcheck
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            example:
+              status: ok
   /institutions/list:
     get:
       tags:
       - Institutions
       summary: GET Institutions List
       operationId: GET_Institutions_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -151,12 +156,7 @@ paths:
       - Institutions
       summary: POST Create/Update Institution
       operationId: POST_Create_Update_Institution_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -343,11 +343,6 @@ paths:
       summary: GET Single Institution
       operationId: GET_Single_Institution_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: institution_id
         in: path
         required: true
@@ -481,12 +476,7 @@ paths:
       - IntegrationAudit
       summary: GET Audit List
       operationId: GET_Audit_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -625,12 +615,7 @@ paths:
       - IntegrationAudit
       summary: POST Create/Update Audit
       operationId: POST_Create_Update_Audit_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -764,11 +749,6 @@ paths:
       summary: GET Single Audit
       operationId: GET_Single_Audit_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: audit_id
         in: path
         required: true
@@ -906,12 +886,7 @@ paths:
       - ValidationLogs
       summary: GET Logs List
       operationId: GET_Logs_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1046,12 +1021,7 @@ paths:
       - ValidationLogs
       summary: POST Create/Update Log
       operationId: POST_Create_Update_Log_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1185,11 +1155,6 @@ paths:
       summary: GET Single Log
       operationId: GET_Single_Log_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: log_id
         in: path
         required: true
@@ -1327,12 +1292,7 @@ paths:
       - Instruments
       summary: GET Instruments List
       operationId: GET_Instruments_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1463,12 +1423,7 @@ paths:
       - Instruments
       summary: POST Create/Update Instrument
       operationId: POST_Create_Update_Instrument_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1654,12 +1609,7 @@ paths:
       - Instruments
       summary: POST Update Request
       operationId: POST_Update_Request_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1798,12 +1748,7 @@ paths:
       - Instruments
       summary: POST Bulk Create Instruments
       operationId: POST_Bulk_Create_Instruments_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1931,11 +1876,6 @@ paths:
       summary: GET Single Instrument
       operationId: GET_Single_Instrument_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: instrument_id
         in: path
         required: true
@@ -2069,11 +2009,6 @@ paths:
       summary: DELETE Instrument
       operationId: DELETE_Instrument_delete
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: instrument_id
         in: path
         required: true
@@ -2207,12 +2142,7 @@ paths:
       - Series
       summary: GET Series List
       operationId: GET_Series_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -2343,12 +2273,7 @@ paths:
       - Series
       summary: POST Create/Update Serie
       operationId: POST_Create_Update_Serie_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -2478,11 +2403,6 @@ paths:
       summary: GET Single Serie
       operationId: GET_Single_Serie_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: serie_id
         in: path
         required: true
@@ -2616,11 +2536,6 @@ paths:
       summary: DELETE Serie
       operationId: DELETE_Serie_delete
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: serie_id
         in: path
         required: true
@@ -2754,12 +2669,7 @@ paths:
       - Patterns
       summary: GET Patterns List
       operationId: GET_Patterns_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -2890,12 +2800,7 @@ paths:
       - Patterns
       summary: POST Create/Update Pattern
       operationId: POST_Create_Update_Pattern_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -3025,11 +2930,6 @@ paths:
       summary: GET Single Pattern
       operationId: GET_Single_Pattern_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: pattern_id
         in: path
         required: true
@@ -3163,11 +3063,6 @@ paths:
       summary: DELETE Pattern
       operationId: DELETE_Pattern_delete
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: pattern_id
         in: path
         required: true
@@ -3301,12 +3196,7 @@ paths:
       - InterestRateApp
       summary: GET Interest Rate App List
       operationId: GET_Interest_Rate_App_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -3437,12 +3327,7 @@ paths:
       - InterestRateApp
       summary: POST Create/Update Interest Rate App
       operationId: POST_Create_Update_Interest_Rate_App_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -3572,11 +3457,6 @@ paths:
       summary: GET Single Interest Rate App
       operationId: GET_Single_Interest_Rate_App_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: int_rate_app_id
         in: path
         required: true
@@ -3706,11 +3586,6 @@ paths:
       summary: DELETE Interest Rate App
       operationId: DELETE_Interest_Rate_App_delete
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: int_rate_app_id
         in: path
         required: true
@@ -3844,12 +3719,7 @@ paths:
       - Subscriptions
       summary: GET Subscriptions List
       operationId: GET_Subscriptions_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -3980,12 +3850,7 @@ paths:
       - Subscriptions
       summary: POST Create/Update Subscription
       operationId: POST_Create_Update_Subscription_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -4114,12 +3979,7 @@ paths:
       - Subscriptions
       summary: POST Subscription Update Request
       operationId: POST_Subscription_Update_Request_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -4258,12 +4118,7 @@ paths:
       - Subscriptions
       summary: POST Bulk Create Subscriptions
       operationId: POST_Bulk_Create_Subscriptions_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -4395,11 +4250,6 @@ paths:
       summary: GET Single Subscription
       operationId: GET_Single_Subscription_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: subscription_id
         in: path
         required: true
@@ -4529,11 +4379,6 @@ paths:
       summary: DELETE Subscription
       operationId: DELETE_Subscription_delete
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: subscription_id
         in: path
         required: true
@@ -4667,12 +4512,7 @@ paths:
       - Payments
       summary: GET Payments List
       operationId: GET_Payments_List_get
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -4803,12 +4643,7 @@ paths:
       - Payments
       summary: POST Create/Update Payment
       operationId: POST_Create_Update_Payment_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -4937,12 +4772,7 @@ paths:
       - Payments
       summary: POST Payment Update Request
       operationId: POST_Payment_Update_Request_post
-      parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
+      parameters: []
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -5082,11 +4912,6 @@ paths:
       summary: GET Single Payment
       operationId: GET_Single_Payment_get
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: payment_id
         in: path
         required: true
@@ -5220,11 +5045,6 @@ paths:
       summary: DELETE Payment
       operationId: DELETE_Payment_delete
       parameters:
-      - name: SERVER_URL
-        in: path
-        required: true
-        schema:
-          type: string
       - name: payment_id
         in: path
         required: true

@@ -2,9 +2,9 @@
   "name": "prism-mock",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx prism mock pak_full_collection_v4.json --port $PORT --host 0.0.0.0 --mock.example"
+    "start": "npx prism mock pak_full_collection_v4.json --port $PORT --host 0.0.0.0 -x"
   },
   "dependencies": {
-    "@stoplight/prism-cli": "^5.0.0"
+    "@stoplight/prism-cli": "4.10.5"
   }
 }

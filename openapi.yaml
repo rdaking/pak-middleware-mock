@@ -403,20 +403,55 @@ paths:
                 - result
                 - data
                 - meta
-              example:
-                success: true
-                result:
-                  code: 200
-                  message: Operation completed ...
-                  details: {}
-                data:
-                  institutionId: SBP
-                  institutionName: State Bank of Pakistan
-                meta:
-                  timestamp: '2025-11-19T02:21:18Z'
-                  page: 1
-                  size: 25
-                  totalElements: 1
+              examples:
+                SBP:
+                  summary: State Bank of Pakistan
+                  value:
+                    success: true
+                    result:
+                      code: 200
+                      message: OK
+                      details: {}
+                    data:
+                      institutionId: SBP
+                      institutionName: State Bank of Pakistan
+                    meta:
+                      timestamp: "2025-11-20T21:00:00Z"
+                      page: 1
+                      size: 25
+                      totalElements: 1
+                PSX:
+                  summary: Pakistan Stock Exchange
+                  value:
+                    success: true
+                    result:
+                      code: 200
+                      message: OK
+                      details: {}
+                    data:
+                      institutionId: PSX
+                      institutionName: Pakistan Stock Exchange
+                    meta:
+                      timestamp: "2025-11-20T21:00:00Z"
+                      page: 1
+                      size: 25
+                      totalElements: 1
+                CDNS:
+                  summary: Central Directorate of National Savings
+                  value:
+                    success: true
+                    result:
+                      code: 200
+                      message: OK
+                      details: {}
+                    data:
+                      institutionId: CDNS
+                      institutionName: National Savings
+                    meta:
+                      timestamp: "2025-11-20T21:00:00Z"
+                      page: 1
+                      size: 25
+                      totalElements: 1
         '422':
           description: ERR_422_NOT_FOUND
           content:

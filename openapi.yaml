@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: PAK Middleware API – Full Collection V4
+  title: "PAK Middleware API \u2013 Full Collection V4"
   description: Full mock-ready collection V4. Relevant error examples added to each
     request (Option 2).
   version: 1.0.0
@@ -9,7 +9,7 @@ servers:
 - url: https://pak-middleware-mock.onrender.com
   description: Render Prism Mock (user-provided)
 paths:
-  /{SERVER_URL}/institutions/list:
+  /institutions/list:
     get:
       tags:
       - Institutions
@@ -145,7 +145,7 @@ paths:
                     datatype: institutions
                     accountable_code: ''
                     validation_rule: invalid_format
-  /{SERVER_URL}/institutions:
+  /institutions:
     post:
       tags:
       - Institutions
@@ -336,7 +336,7 @@ paths:
                     datatype: institutions
                     accountable_code: ''
                     validation_rule: unique
-  /{SERVER_URL}/institutions/{institution_id}:
+  /institutions/{institution_id}:
     get:
       tags:
       - Institutions
@@ -475,7 +475,7 @@ paths:
                     datatype: institutions
                     accountable_code: ''
                     validation_rule: must_exist
-  /{SERVER_URL}/audit/list:
+  /audit/list:
     get:
       tags:
       - IntegrationAudit
@@ -619,7 +619,7 @@ paths:
                     datatype: integration_audit
                     accountable_code: ''
                     validation_rule: must_exist
-  /{SERVER_URL}/audit:
+  /audit:
     post:
       tags:
       - IntegrationAudit
@@ -757,7 +757,7 @@ paths:
                     datatype: integration_audit
                     accountable_code: ''
                     validation_rule: enum(create,update,delete,send)
-  /{SERVER_URL}/audit/{audit_id}:
+  /audit/{audit_id}:
     get:
       tags:
       - IntegrationAudit
@@ -900,7 +900,7 @@ paths:
                     datatype: integration_audit
                     accountable_code: ''
                     validation_rule: must_exist
-  /{SERVER_URL}/logs/list:
+  /logs/list:
     get:
       tags:
       - ValidationLogs
@@ -1040,7 +1040,7 @@ paths:
                     datatype: validation_log
                     accountable_code: ''
                     validation_rule: invalid_format
-  /{SERVER_URL}/logs:
+  /logs:
     post:
       tags:
       - ValidationLogs
@@ -1178,7 +1178,7 @@ paths:
                     datatype: validation_log
                     accountable_code: ''
                     validation_rule: enum(instrument,payment,subscription,serie,rate)
-  /{SERVER_URL}/logs/{log_id}:
+  /logs/{log_id}:
     get:
       tags:
       - ValidationLogs
@@ -1321,7 +1321,7 @@ paths:
                     datatype: validation_log
                     accountable_code: ''
                     validation_rule: must_exist
-  /{SERVER_URL}/instruments/list:
+  /instruments/list:
     get:
       tags:
       - Instruments
@@ -1457,7 +1457,7 @@ paths:
                     datatype: instruments
                     accountable_code: ''
                     validation_rule: integer
-  /{SERVER_URL}/instruments:
+  /instruments:
     post:
       tags:
       - Instruments
@@ -1648,7 +1648,7 @@ paths:
                     datatype: instruments
                     accountable_code: ''
                     validation_rule: unique
-  /{SERVER_URL}/instruments/update-request:
+  /instruments/update-request:
     post:
       tags:
       - Instruments
@@ -1792,7 +1792,7 @@ paths:
                     datatype: instruments
                     accountable_code: ''
                     validation_rule: must_exist_sent
-  /{SERVER_URL}/instruments/bulk-create:
+  /instruments/bulk-create:
     post:
       tags:
       - Instruments
@@ -1924,7 +1924,7 @@ paths:
                     datatype: instruments
                     accountable_code: ''
                     validation_rule: row_errors
-  /{SERVER_URL}/instruments/{instrument_id}:
+  /instruments/{instrument_id}:
     get:
       tags:
       - Instruments
@@ -2201,7 +2201,7 @@ paths:
                     datatype: instruments
                     accountable_code: ''
                     validation_rule: cannot_delete_sent
-  /{SERVER_URL}/series/list:
+  /series/list:
     get:
       tags:
       - Series
@@ -2337,7 +2337,7 @@ paths:
                     datatype: series
                     accountable_code: ''
                     validation_rule: invalid_format
-  /{SERVER_URL}/series:
+  /series:
     post:
       tags:
       - Series
@@ -2471,7 +2471,7 @@ paths:
                     datatype: series
                     accountable_code: ''
                     validation_rule: gt_0
-  /{SERVER_URL}/series/{serie_id}:
+  /series/{serie_id}:
     get:
       tags:
       - Series
@@ -2748,7 +2748,7 @@ paths:
                     datatype: series
                     accountable_code: ''
                     validation_rule: cannot_delete_has_payments
-  /{SERVER_URL}/series/patterns/list:
+  /series/patterns/list:
     get:
       tags:
       - Patterns
@@ -2884,7 +2884,7 @@ paths:
                     datatype: serie_patterns
                     accountable_code: ''
                     validation_rule: enum(MONTHLY,QUARTERLY,ANNUAL)
-  /{SERVER_URL}/series/patterns:
+  /series/patterns:
     post:
       tags:
       - Patterns
@@ -3018,7 +3018,7 @@ paths:
                     datatype: serie_patterns
                     accountable_code: ''
                     validation_rule: date_format
-  /{SERVER_URL}/series/patterns/{pattern_id}:
+  /series/patterns/{pattern_id}:
     get:
       tags:
       - Patterns
@@ -3295,7 +3295,7 @@ paths:
                     datatype: serie_patterns
                     accountable_code: ''
                     validation_rule: cannot_delete_in_use
-  /{SERVER_URL}/series/interest-application/list:
+  /series/interest-application/list:
     get:
       tags:
       - InterestRateApp
@@ -3431,7 +3431,7 @@ paths:
                     datatype: int_rate_application
                     accountable_code: ''
                     validation_rule: enum(FIXED,VARIABLE)
-  /{SERVER_URL}/series/interest-application:
+  /series/interest-application:
     post:
       tags:
       - InterestRateApp
@@ -3565,7 +3565,7 @@ paths:
                     datatype: int_rate_application
                     accountable_code: ''
                     validation_rule: gt_0
-  /{SERVER_URL}/series/interest-application/{int_rate_app_id}:
+  /series/interest-application/{int_rate_app_id}:
     get:
       tags:
       - InterestRateApp
@@ -3838,7 +3838,7 @@ paths:
                     datatype: int_rate_application
                     accountable_code: ''
                     validation_rule: cannot_delete_in_use
-  /{SERVER_URL}/series/subscriptions/list:
+  /series/subscriptions/list:
     get:
       tags:
       - Subscriptions
@@ -3974,7 +3974,7 @@ paths:
                     datatype: subscriptions
                     accountable_code: ''
                     validation_rule: date_format
-  /{SERVER_URL}/series/subscriptions:
+  /series/subscriptions:
     post:
       tags:
       - Subscriptions
@@ -4108,7 +4108,7 @@ paths:
                     datatype: subscriptions
                     accountable_code: ''
                     validation_rule: gt_0
-  /{SERVER_URL}/series/subscriptions/update-request:
+  /series/subscriptions/update-request:
     post:
       tags:
       - Subscriptions
@@ -4252,7 +4252,7 @@ paths:
                     datatype: subscriptions
                     accountable_code: ''
                     validation_rule: must_exist
-  /{SERVER_URL}/series/subscriptions/bulk-create:
+  /series/subscriptions/bulk-create:
     post:
       tags:
       - Subscriptions
@@ -4388,7 +4388,7 @@ paths:
                     datatype: subscriptions
                     accountable_code: ''
                     validation_rule: row_errors
-  /{SERVER_URL}/series/subscriptions/{subscription_id}:
+  /series/subscriptions/{subscription_id}:
     get:
       tags:
       - Subscriptions
@@ -4661,7 +4661,7 @@ paths:
                     datatype: subscriptions
                     accountable_code: ''
                     validation_rule: cannot_delete_has_receipts
-  /{SERVER_URL}/series/payments/list:
+  /series/payments/list:
     get:
       tags:
       - Payments
@@ -4797,7 +4797,7 @@ paths:
                     datatype: payments
                     accountable_code: ''
                     validation_rule: enum(BANK_TRANSFER,CASH,CHEQUE)
-  /{SERVER_URL}/series/payments:
+  /series/payments:
     post:
       tags:
       - Payments
@@ -4931,7 +4931,7 @@ paths:
                     datatype: payments
                     accountable_code: ''
                     validation_rule: date_order
-  /{SERVER_URL}/series/payments/update-request:
+  /series/payments/update-request:
     post:
       tags:
       - Payments
@@ -5075,7 +5075,7 @@ paths:
                     datatype: payments
                     accountable_code: ''
                     validation_rule: must_exist
-  /{SERVER_URL}/series/payments/{payment_id}:
+  /series/payments/{payment_id}:
     get:
       tags:
       - Payments

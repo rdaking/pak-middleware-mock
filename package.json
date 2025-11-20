@@ -1,0 +1,10 @@
+{
+  "name": "prism-mock",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "prism mock pak_full_collection_v4.json --port $PORT"
+  },
+  "dependencies": {
+    "@stoplight/prism-cli": "^5.0.0"
+  }
+}

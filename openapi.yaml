@@ -55,9 +55,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        institution_id:
+                        institutionId:
                           type: string
-                        institution_name:
+                        institutionName:
                           type: string
                       required:
                       - institution_id
@@ -106,7 +106,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -122,9 +122,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -184,11 +184,11 @@ paths:
                   data:
                     type: object
                     properties:
-                      institution_id:
+                      institutionId:
                         type: string
-                      institution_name:
+                      institutionName:
                         type: string
-                      contact_email:
+                      contactEmail:
                         type: string
                     required:
                     - institution_id
@@ -239,7 +239,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -255,9 +255,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -292,7 +292,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -308,9 +308,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -375,9 +375,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      institution_id:
+                      institutionId:
                         type: string
-                      institution_name:
+                      institutionName:
                         type: string
                     required:
                     - institution_id
@@ -416,7 +416,7 @@ paths:
                       institutionId: SBP
                       institutionName: State Bank of Pakistan
                     meta:
-                      timestamp: "2025-11-20T21:00:00Z"
+                      timestamp: '2025-11-20T21:00:00Z'
                       page: 1
                       size: 25
                       totalElements: 1
@@ -432,7 +432,7 @@ paths:
                       institutionId: PSX
                       institutionName: Pakistan Stock Exchange
                     meta:
-                      timestamp: "2025-11-20T21:00:00Z"
+                      timestamp: '2025-11-20T21:00:00Z'
                       page: 1
                       size: 25
                       totalElements: 1
@@ -448,7 +448,7 @@ paths:
                       institutionId: CDNS
                       institutionName: National Savings
                     meta:
-                      timestamp: "2025-11-20T21:00:00Z"
+                      timestamp: '2025-11-20T21:00:00Z'
                       page: 1
                       size: 25
                       totalElements: 1
@@ -461,7 +461,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -477,9 +477,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -541,13 +541,13 @@ paths:
                     items:
                       type: object
                       properties:
-                        audit_id:
+                        auditId:
                           type: integer
-                        institution_id:
+                        institutionId:
                           type: string
                         operation:
                           type: string
-                        validation_status:
+                        validationStatus:
                           type: string
                       required:
                       - audit_id
@@ -600,7 +600,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -616,9 +616,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -678,9 +678,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      audit_id:
+                      auditId:
                         type: integer
-                      institution_id:
+                      institutionId:
                         type: string
                       operation:
                         type: string
@@ -733,7 +733,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -749,9 +749,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -816,9 +816,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      audit_id:
+                      auditId:
                         type: integer
-                      institution_id:
+                      institutionId:
                         type: string
                       operation:
                         type: string
@@ -871,7 +871,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -887,9 +887,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -951,11 +951,11 @@ paths:
                     items:
                       type: object
                       properties:
-                        log_id:
+                        logId:
                           type: integer
-                        entity_type:
+                        entityType:
                           type: string
-                        validation_message:
+                        validationMessage:
                           type: string
                       required:
                       - log_id
@@ -1006,7 +1006,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1022,9 +1022,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1084,11 +1084,11 @@ paths:
                   data:
                     type: object
                     properties:
-                      log_id:
+                      logId:
                         type: integer
-                      entity_type:
+                      entityType:
                         type: string
-                      validation_message:
+                      validationMessage:
                         type: string
                     required:
                     - log_id
@@ -1139,7 +1139,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1155,9 +1155,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1222,11 +1222,11 @@ paths:
                   data:
                     type: object
                     properties:
-                      log_id:
+                      logId:
                         type: integer
-                      entity_type:
+                      entityType:
                         type: string
-                      validation_message:
+                      validationMessage:
                         type: string
                     required:
                     - log_id
@@ -1277,7 +1277,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1293,9 +1293,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1357,7 +1357,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        instrument_id:
+                        instrumentId:
                           type: string
                         name:
                           type: string
@@ -1408,7 +1408,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1424,9 +1424,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1486,11 +1486,11 @@ paths:
                   data:
                     type: object
                     properties:
-                      instrument_id:
+                      instrumentId:
                         type: string
-                      institution_id:
+                      institutionId:
                         type: string
-                      original_inst_id:
+                      originalInstId:
                         type: string
                     required:
                     - instrument_id
@@ -1541,7 +1541,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1557,9 +1557,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1594,7 +1594,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1610,9 +1610,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1672,12 +1672,12 @@ paths:
                   data:
                     type: object
                     properties:
-                      instrument_id:
+                      instrumentId:
                         type: string
-                      updated_fields:
+                      updatedFields:
                         type: object
                         properties:
-                          d_final_maturity:
+                          dFinalMaturity:
                             type: string
                         required:
                         - d_final_maturity
@@ -1733,7 +1733,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1749,9 +1749,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1813,7 +1813,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        instrument_id:
+                        instrumentId:
                           type: string
                       required:
                       - instrument_id
@@ -1860,7 +1860,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -1876,9 +1876,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -1943,7 +1943,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      instrument_id:
+                      instrumentId:
                         type: string
                       status:
                         type: string
@@ -1994,7 +1994,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2010,9 +2010,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2076,7 +2076,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      instrument_id:
+                      instrumentId:
                         type: string
                       deleted:
                         type: boolean
@@ -2127,7 +2127,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2143,9 +2143,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2207,9 +2207,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        serie_id:
+                        serieId:
                           type: string
-                        serie_amt:
+                        serieAmt:
                           type: integer
                       required:
                       - serie_id
@@ -2258,7 +2258,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2274,9 +2274,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2336,9 +2336,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      serie_id:
+                      serieId:
                         type: string
-                      serie_amt:
+                      serieAmt:
                         type: integer
                     required:
                     - serie_id
@@ -2387,7 +2387,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2403,9 +2403,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2470,7 +2470,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      serie_id:
+                      serieId:
                         type: string
                       status:
                         type: string
@@ -2521,7 +2521,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2537,9 +2537,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2603,7 +2603,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      serie_id:
+                      serieId:
                         type: string
                       deleted:
                         type: boolean
@@ -2654,7 +2654,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2670,9 +2670,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2734,7 +2734,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        serie_pat_id:
+                        seriePatId:
                           type: string
                         percentage:
                           type: integer
@@ -2785,7 +2785,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2801,9 +2801,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2863,7 +2863,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      serie_pat_id:
+                      seriePatId:
                         type: string
                       percentage:
                         type: integer
@@ -2914,7 +2914,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -2930,9 +2930,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -2997,7 +2997,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      serie_pat_id:
+                      seriePatId:
                         type: string
                       status:
                         type: string
@@ -3048,7 +3048,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3064,9 +3064,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3130,7 +3130,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      serie_pat_id:
+                      seriePatId:
                         type: string
                       deleted:
                         type: boolean
@@ -3181,7 +3181,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3197,9 +3197,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3261,9 +3261,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        int_rate_app_id:
+                        intRateAppId:
                           type: string
-                        rate_pcent:
+                        ratePcent:
                           type: number
                       required:
                       - int_rate_app_id
@@ -3312,7 +3312,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3328,9 +3328,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3390,9 +3390,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      int_rate_app_id:
+                      intRateAppId:
                         type: string
-                      rate_pcent:
+                      ratePcent:
                         type: number
                     required:
                     - int_rate_app_id
@@ -3441,7 +3441,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3457,9 +3457,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3524,7 +3524,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      int_rate_app_id:
+                      intRateAppId:
                         type: string
                     required:
                     - int_rate_app_id
@@ -3571,7 +3571,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3587,9 +3587,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3653,7 +3653,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      int_rate_app_id:
+                      intRateAppId:
                         type: string
                       deleted:
                         type: boolean
@@ -3704,7 +3704,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3720,9 +3720,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3784,9 +3784,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        subscription_id:
+                        subscriptionId:
                           type: string
-                        receipts_amount:
+                        receiptsAmount:
                           type: integer
                       required:
                       - subscription_id
@@ -3835,7 +3835,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3851,9 +3851,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -3913,9 +3913,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      subscription_id:
+                      subscriptionId:
                         type: string
-                      receipts_amount:
+                      receiptsAmount:
                         type: integer
                     required:
                     - subscription_id
@@ -3964,7 +3964,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -3980,9 +3980,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4042,12 +4042,12 @@ paths:
                   data:
                     type: object
                     properties:
-                      subscription_id:
+                      subscriptionId:
                         type: string
-                      updated_fields:
+                      updatedFields:
                         type: object
                         properties:
-                          receipts_amount:
+                          receiptsAmount:
                             type: integer
                         required:
                         - receipts_amount
@@ -4103,7 +4103,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4119,9 +4119,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4183,9 +4183,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        subscription_id:
+                        subscriptionId:
                           type: string
-                        receipts_amount:
+                        receiptsAmount:
                           type: integer
                       required:
                       - subscription_id
@@ -4234,7 +4234,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4250,9 +4250,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4317,7 +4317,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      subscription_id:
+                      subscriptionId:
                         type: string
                     required:
                     - subscription_id
@@ -4364,7 +4364,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4380,9 +4380,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4446,7 +4446,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      subscription_id:
+                      subscriptionId:
                         type: string
                       deleted:
                         type: boolean
@@ -4497,7 +4497,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4513,9 +4513,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4577,7 +4577,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        payment_id:
+                        paymentId:
                           type: string
                         amount:
                           type: integer
@@ -4628,7 +4628,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4644,9 +4644,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4706,7 +4706,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      payment_id:
+                      paymentId:
                         type: string
                       amount:
                         type: integer
@@ -4757,7 +4757,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4773,9 +4773,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4835,9 +4835,9 @@ paths:
                   data:
                     type: object
                     properties:
-                      payment_id:
+                      paymentId:
                         type: string
-                      updated_fields:
+                      updatedFields:
                         type: object
                         properties:
                           amount:
@@ -4896,7 +4896,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -4912,9 +4912,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -4979,7 +4979,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      payment_id:
+                      paymentId:
                         type: string
                       amount:
                         type: integer
@@ -5030,7 +5030,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -5046,9 +5046,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field
@@ -5112,7 +5112,7 @@ paths:
                   data:
                     type: object
                     properties:
-                      payment_id:
+                      paymentId:
                         type: string
                       deleted:
                         type: boolean
@@ -5163,7 +5163,7 @@ paths:
                 properties:
                   success:
                     type: boolean
-                  id_key:
+                  idKey:
                     type: string
                   result:
                     type: object
@@ -5179,9 +5179,9 @@ paths:
                             type: string
                           datatype:
                             type: string
-                          accountable_code:
+                          accountableCode:
                             type: string
-                          validation_rule:
+                          validationRule:
                             type: string
                         required:
                         - field

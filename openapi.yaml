@@ -90,8 +90,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - institution_id: SBP
-                  institution_name: State Bank of Pakistan
+                - institutionId: SBP
+                  institutionName: State Bank of Pakistan
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -141,15 +141,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid search parameter
                   details:
                     field: search
                     datatype: institutions
-                    accountable_code: ''
-                    validation_rule: invalid_format
+                    accountableCode: ''
+                    validationRule: invalid_format
   /institutions:
     post:
       tags:
@@ -222,9 +222,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  institution_id: SBP
-                  institution_name: State Bank of Pakistan
-                  contact_email: info@sbp.pk
+                  institutionId: SBP
+                  institutionName: State Bank of Pakistan
+                  contactEmail: info@sbp.pk
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -274,15 +274,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid email format
                   details:
                     field: contact_email
                     datatype: institutions
-                    accountable_code: ''
-                    validation_rule: email
+                    accountableCode: ''
+                    validationRule: email
         '409':
           description: ERR_409_DUPLICATE_ID
           content:
@@ -327,15 +327,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 409
                   message: Duplicate Institution ID
                   details:
                     field: institution_id
                     datatype: institutions
-                    accountable_code: ''
-                    validation_rule: unique
+                    accountableCode: ''
+                    validationRule: unique
   /institutions/{institution_id}:
     get:
       tags:
@@ -410,8 +410,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  institution_id: SBP
-                  institution_name: State Bank of Pakistan
+                  institutionId: SBP
+                  institutionName: State Bank of Pakistan
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -461,15 +461,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Institution not found
                   details:
                     field: institution_id
                     datatype: institutions
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
   /audit/list:
     get:
       tags:
@@ -547,10 +547,10 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - audit_id: 100
-                  institution_id: SBP
+                - auditId: 100
+                  institutionId: SBP
                   operation: create
-                  validation_status: PENDING
+                  validationStatus: PENDING
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -600,15 +600,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Institution reference invalid
                   details:
                     field: institution_id
                     datatype: integration_audit
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
   /audit:
     post:
       tags:
@@ -681,8 +681,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  audit_id: 100
-                  institution_id: SBP
+                  auditId: 100
+                  institutionId: SBP
                   operation: create
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -733,15 +733,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid operation
                   details:
                     field: operation
                     datatype: integration_audit
-                    accountable_code: ''
-                    validation_rule: enum(create,update,delete,send)
+                    accountableCode: ''
+                    validationRule: enum(create,update,delete,send)
   /audit/{audit_id}:
     get:
       tags:
@@ -819,8 +819,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  audit_id: 100
-                  institution_id: SBP
+                  auditId: 100
+                  institutionId: SBP
                   operation: create
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -871,15 +871,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Audit not found
                   details:
                     field: audit_id
                     datatype: integration_audit
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
   /logs/list:
     get:
       tags:
@@ -954,9 +954,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - log_id: 2001
-                  entity_type: instrument
-                  validation_message: OK
+                - logId: 2001
+                  entityType: instrument
+                  validationMessage: OK
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -1006,15 +1006,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid search param
                   details:
                     field: search
                     datatype: validation_log
-                    accountable_code: ''
-                    validation_rule: invalid_format
+                    accountableCode: ''
+                    validationRule: invalid_format
   /logs:
     post:
       tags:
@@ -1087,9 +1087,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  log_id: 2001
-                  entity_type: instrument
-                  validation_message: OK
+                  logId: 2001
+                  entityType: instrument
+                  validationMessage: OK
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -1139,15 +1139,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid entity type
                   details:
                     field: entity_type
                     datatype: validation_log
-                    accountable_code: ''
-                    validation_rule: enum(instrument,payment,subscription,serie,rate)
+                    accountableCode: ''
+                    validationRule: enum(instrument,payment,subscription,serie,rate)
   /logs/{log_id}:
     get:
       tags:
@@ -1225,9 +1225,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  log_id: 2001
-                  entity_type: instrument
-                  validation_message: OK
+                  logId: 2001
+                  entityType: instrument
+                  validationMessage: OK
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -1277,15 +1277,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Log not found
                   details:
                     field: log_id
                     datatype: validation_log
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
   /instruments/list:
     get:
       tags:
@@ -1357,7 +1357,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - instrument_id: SBP-BND-000001
+                - instrumentId: SBP-BND-000001
                   name: MTB JUNE 2025
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -1408,15 +1408,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid page number
                   details:
                     field: page
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: integer
+                    accountableCode: ''
+                    validationRule: integer
   /instruments:
     post:
       tags:
@@ -1489,9 +1489,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  instrument_id: SBP-BND-000001
-                  institution_id: SBP
-                  original_inst_id: MTB-9821
+                  instrumentId: SBP-BND-000001
+                  institutionId: SBP
+                  originalInstId: MTB-9821
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -1541,15 +1541,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: issue_date must be <= maturity_date
                   details:
                     field: d_sign/d_final_maturity
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: date_order
+                    accountableCode: ''
+                    validationRule: date_order
         '409':
           description: ERR_409_DUPLICATE_ID
           content:
@@ -1594,15 +1594,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 409
                   message: Duplicate instrument_id
                   details:
                     field: instrument_id
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: unique
+                    accountableCode: ''
+                    validationRule: unique
   /instruments/update-request:
     post:
       tags:
@@ -1680,9 +1680,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  instrument_id: SBP-BND-000001
-                  updated_fields:
-                    d_final_maturity: '2026-06-21'
+                  instrumentId: SBP-BND-000001
+                  updatedFields:
+                    dFinalMaturity: '2026-06-21'
                   reason: Correction
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -1733,15 +1733,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Update not allowed for non-sent record
                   details:
                     field: instrument_id
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: must_exist_sent
+                    accountableCode: ''
+                    validationRule: must_exist_sent
   /instruments/bulk-create:
     post:
       tags:
@@ -1810,7 +1810,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - instrument_id: SBP-BND-000002
+                - instrumentId: SBP-BND-000002
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -1860,15 +1860,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: 'Row 2: instrument_id missing'
                   details:
                     field: bulk_row
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: row_errors
+                    accountableCode: ''
+                    validationRule: row_errors
   /instruments/{instrument_id}:
     get:
       tags:
@@ -1943,7 +1943,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  instrument_id: SBP-BND-000001
+                  instrumentId: SBP-BND-000001
                   status: STAGED
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -1994,15 +1994,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Instrument not found
                   details:
                     field: instrument_id
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
     delete:
       tags:
       - Instruments
@@ -2076,7 +2076,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  instrument_id: SBP-BND-000001
+                  instrumentId: SBP-BND-000001
                   deleted: true
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -2127,15 +2127,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Cannot delete instrument already SENT
                   details:
                     field: instrument_id
                     datatype: instruments
-                    accountable_code: ''
-                    validation_rule: cannot_delete_sent
+                    accountableCode: ''
+                    validationRule: cannot_delete_sent
   /series/list:
     get:
       tags:
@@ -2207,8 +2207,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - serie_id: SBP-BND-000001
-                  serie_amt: 2000000000
+                - serieId: SBP-BND-000001
+                  serieAmt: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -2258,15 +2258,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid serie_id format
                   details:
                     field: serie_id
                     datatype: series
-                    accountable_code: ''
-                    validation_rule: invalid_format
+                    accountableCode: ''
+                    validationRule: invalid_format
   /series:
     post:
       tags:
@@ -2336,8 +2336,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  serie_id: SBP-BND-000001
-                  serie_amt: 2000000000
+                  serieId: SBP-BND-000001
+                  serieAmt: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -2387,15 +2387,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: serie_amt must be > 0
                   details:
                     field: serie_amt
                     datatype: series
-                    accountable_code: ''
-                    validation_rule: gt_0
+                    accountableCode: ''
+                    validationRule: gt_0
   /series/{serie_id}:
     get:
       tags:
@@ -2470,7 +2470,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  serie_id: SBP-BND-000001
+                  serieId: SBP-BND-000001
                   status: STAGED
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -2521,15 +2521,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Serie not found
                   details:
                     field: serie_id
                     datatype: series
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
     delete:
       tags:
       - Series
@@ -2603,7 +2603,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  serie_id: SBP-BND-000001
+                  serieId: SBP-BND-000001
                   deleted: true
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -2654,15 +2654,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Cannot delete series with payments
                   details:
                     field: serie_id
                     datatype: series
-                    accountable_code: ''
-                    validation_rule: cannot_delete_has_payments
+                    accountableCode: ''
+                    validationRule: cannot_delete_has_payments
   /series/patterns/list:
     get:
       tags:
@@ -2734,7 +2734,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - serie_pat_id: SBP-BND-000001
+                - seriePatId: SBP-BND-000001
                   percentage: 100
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -2785,15 +2785,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid periodicity
                   details:
                     field: cd_periodicity
                     datatype: serie_patterns
-                    accountable_code: ''
-                    validation_rule: enum(MONTHLY,QUARTERLY,ANNUAL)
+                    accountableCode: ''
+                    validationRule: enum(MONTHLY,QUARTERLY,ANNUAL)
   /series/patterns:
     post:
       tags:
@@ -2863,7 +2863,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  serie_pat_id: SBP-BND-000001
+                  seriePatId: SBP-BND-000001
                   percentage: 100
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -2914,15 +2914,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid date format
                   details:
                     field: d_first_payment
                     datatype: serie_patterns
-                    accountable_code: ''
-                    validation_rule: date_format
+                    accountableCode: ''
+                    validationRule: date_format
   /series/patterns/{pattern_id}:
     get:
       tags:
@@ -2997,7 +2997,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  serie_pat_id: SBP-BND-000001
+                  seriePatId: SBP-BND-000001
                   status: STAGED
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -3048,15 +3048,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Pattern not found
                   details:
                     field: pattern_id
                     datatype: serie_patterns
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
     delete:
       tags:
       - Patterns
@@ -3130,7 +3130,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  serie_pat_id: SBP-BND-000001
+                  seriePatId: SBP-BND-000001
                   deleted: true
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -3181,15 +3181,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Cannot delete pattern in use
                   details:
                     field: pattern_id
                     datatype: serie_patterns
-                    accountable_code: ''
-                    validation_rule: cannot_delete_in_use
+                    accountableCode: ''
+                    validationRule: cannot_delete_in_use
   /series/interest-application/list:
     get:
       tags:
@@ -3261,8 +3261,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - int_rate_app_id: SBP-BND-000001-IRA-1
-                  rate_pcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1
+                  ratePcent: 8.5
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -3312,15 +3312,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid interest type
                   details:
                     field: cd_int_typ
                     datatype: int_rate_application
-                    accountable_code: ''
-                    validation_rule: enum(FIXED,VARIABLE)
+                    accountableCode: ''
+                    validationRule: enum(FIXED,VARIABLE)
   /series/interest-application:
     post:
       tags:
@@ -3390,8 +3390,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  int_rate_app_id: SBP-BND-000001-IRA-1
-                  rate_pcent: 8.5
+                  intRateAppId: SBP-BND-000001-IRA-1
+                  ratePcent: 8.5
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -3441,15 +3441,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: rate_pcent must be > 0
                   details:
                     field: rate_pcent
                     datatype: int_rate_application
-                    accountable_code: ''
-                    validation_rule: gt_0
+                    accountableCode: ''
+                    validationRule: gt_0
   /series/interest-application/{int_rate_app_id}:
     get:
       tags:
@@ -3521,7 +3521,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  int_rate_app_id: SBP-BND-000001-IRA-1
+                  intRateAppId: SBP-BND-000001-IRA-1
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -3571,15 +3571,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Interest Rate App not found
                   details:
                     field: int_rate_app_id
                     datatype: int_rate_application
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
     delete:
       tags:
       - InterestRateApp
@@ -3653,7 +3653,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  int_rate_app_id: SBP-BND-000001-IRA-1
+                  intRateAppId: SBP-BND-000001-IRA-1
                   deleted: true
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -3704,15 +3704,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Cannot delete interest rate app in use
                   details:
                     field: int_rate_app_id
                     datatype: int_rate_application
-                    accountable_code: ''
-                    validation_rule: cannot_delete_in_use
+                    accountableCode: ''
+                    validationRule: cannot_delete_in_use
   /series/subscriptions/list:
     get:
       tags:
@@ -3784,8 +3784,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - subscription_id: SBP-BND-000001-SUB-1
-                  receipts_amount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1
+                  receiptsAmount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -3835,15 +3835,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid tr_date
                   details:
                     field: tr_date
                     datatype: subscriptions
-                    accountable_code: ''
-                    validation_rule: date_format
+                    accountableCode: ''
+                    validationRule: date_format
   /series/subscriptions:
     post:
       tags:
@@ -3913,8 +3913,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  subscription_id: SBP-BND-000001-SUB-1
-                  receipts_amount: 2000000000
+                  subscriptionId: SBP-BND-000001-SUB-1
+                  receiptsAmount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -3964,15 +3964,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: receipts_amount must be > 0
                   details:
                     field: receipts_amount
                     datatype: subscriptions
-                    accountable_code: ''
-                    validation_rule: gt_0
+                    accountableCode: ''
+                    validationRule: gt_0
   /series/subscriptions/update-request:
     post:
       tags:
@@ -4050,9 +4050,9 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  subscription_id: SBP-BND-000001-SUB-1
-                  updated_fields:
-                    receipts_amount: 1500000000
+                  subscriptionId: SBP-BND-000001-SUB-1
+                  updatedFields:
+                    receiptsAmount: 1500000000
                   reason: Correction
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -4103,15 +4103,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Subscription not found
                   details:
                     field: subscription_id
                     datatype: subscriptions
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
   /series/subscriptions/bulk-create:
     post:
       tags:
@@ -4183,8 +4183,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - subscription_id: SBP-BND-000002
-                  receipts_amount: 1000000000
+                - subscriptionId: SBP-BND-000002
+                  receiptsAmount: 1000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -4234,15 +4234,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: 'Row 3: receipts_amount invalid'
                   details:
                     field: bulk_row
                     datatype: subscriptions
-                    accountable_code: ''
-                    validation_rule: row_errors
+                    accountableCode: ''
+                    validationRule: row_errors
   /series/subscriptions/{subscription_id}:
     get:
       tags:
@@ -4314,7 +4314,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  subscription_id: SBP-BND-000001-SUB-1
+                  subscriptionId: SBP-BND-000001-SUB-1
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -4364,15 +4364,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Subscription not found
                   details:
                     field: subscription_id
                     datatype: subscriptions
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
     delete:
       tags:
       - Subscriptions
@@ -4446,7 +4446,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  subscription_id: SBP-BND-000001-SUB-1
+                  subscriptionId: SBP-BND-000001-SUB-1
                   deleted: true
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -4497,15 +4497,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Cannot delete subscription with receipts
                   details:
                     field: subscription_id
                     datatype: subscriptions
-                    accountable_code: ''
-                    validation_rule: cannot_delete_has_receipts
+                    accountableCode: ''
+                    validationRule: cannot_delete_has_receipts
   /series/payments/list:
     get:
       tags:
@@ -4577,7 +4577,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - payment_id: SBP-BND-000001-PAY-1
+                - paymentId: SBP-BND-000001-PAY-1
                   amount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -4628,15 +4628,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Invalid payment mode
                   details:
                     field: payment_mode
                     datatype: payments
-                    accountable_code: ''
-                    validation_rule: enum(BANK_TRANSFER,CASH,CHEQUE)
+                    accountableCode: ''
+                    validationRule: enum(BANK_TRANSFER,CASH,CHEQUE)
   /series/payments:
     post:
       tags:
@@ -4706,7 +4706,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  payment_id: SBP-BND-000001-PAY-1
+                  paymentId: SBP-BND-000001-PAY-1
                   amount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -4757,15 +4757,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: sch_payment_date must be <= made_date
                   details:
                     field: sch_payment_date/made_date
                     datatype: payments
-                    accountable_code: ''
-                    validation_rule: date_order
+                    accountableCode: ''
+                    validationRule: date_order
   /series/payments/update-request:
     post:
       tags:
@@ -4843,8 +4843,8 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  payment_id: SBP-BND-000001-PAY-1
-                  updated_fields:
+                  paymentId: SBP-BND-000001-PAY-1
+                  updatedFields:
                     amount: 1500000000
                   reason: Correction
                 meta:
@@ -4896,15 +4896,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Payment not found
                   details:
                     field: payment_id
                     datatype: payments
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
   /series/payments/{payment_id}:
     get:
       tags:
@@ -4979,7 +4979,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  payment_id: SBP-BND-000001-PAY-1
+                  paymentId: SBP-BND-000001-PAY-1
                   amount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -5030,15 +5030,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Payment not found
                   details:
                     field: payment_id
                     datatype: payments
-                    accountable_code: ''
-                    validation_rule: must_exist
+                    accountableCode: ''
+                    validationRule: must_exist
     delete:
       tags:
       - Payments
@@ -5112,7 +5112,7 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                  payment_id: SBP-BND-000001-PAY-1
+                  paymentId: SBP-BND-000001-PAY-1
                   deleted: true
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -5163,15 +5163,15 @@ paths:
                 - result
               example:
                 success: false
-                id_key: '{{idempotency_key}}'
+                idKey: '{{idempotency_key}}'
                 result:
                   code: 422
                   message: Cannot delete reconciled payment
                   details:
                     field: payment_id
                     datatype: payments
-                    accountable_code: ''
-                    validation_rule: cannot_delete_reconciled
+                    accountableCode: ''
+                    validationRule: cannot_delete_reconciled
 components:
   schemas:
     GET_Institutions_List_200:

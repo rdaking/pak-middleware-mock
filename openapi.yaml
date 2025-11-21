@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: PAK Middleware API – Full Collection V4
+  title: "PAK Middleware API \u2013 Full Collection V4"
   description: Full mock-ready collection V4. Relevant error examples added to each
     request (Option 2).
   version: 1.0.0
@@ -25,7 +25,22 @@ paths:
       - Institutions
       summary: GET Institutions List
       operationId: GET_Institutions_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -90,8 +105,26 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - institutionId: SBP
-                  institutionName: State Bank of Pakistan
+                - institutionId: SBP_0
+                  institutionName: State Bank of Pakistan_0
+                - institutionId: SBP_1
+                  institutionName: State Bank of Pakistan_1
+                - institutionId: SBP_2
+                  institutionName: State Bank of Pakistan_2
+                - institutionId: SBP_3
+                  institutionName: State Bank of Pakistan_3
+                - institutionId: SBP_4
+                  institutionName: State Bank of Pakistan_4
+                - institutionId: SBP_5
+                  institutionName: State Bank of Pakistan_5
+                - institutionId: SBP_6
+                  institutionName: State Bank of Pakistan_6
+                - institutionId: SBP_7
+                  institutionName: State Bank of Pakistan_7
+                - institutionId: SBP_8
+                  institutionName: State Bank of Pakistan_8
+                - institutionId: SBP_9
+                  institutionName: State Bank of Pakistan_9
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -511,7 +544,22 @@ paths:
       - IntegrationAudit
       summary: GET Audit List
       operationId: GET_Audit_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -583,9 +631,45 @@ paths:
                   details: {}
                 data:
                 - auditId: 100
-                  institutionId: SBP
-                  operation: create
-                  validationStatus: PENDING
+                  institutionId: SBP_0
+                  operation: create_0
+                  validationStatus: PENDING_0
+                - auditId: 100
+                  institutionId: SBP_1
+                  operation: create_1
+                  validationStatus: PENDING_1
+                - auditId: 100
+                  institutionId: SBP_2
+                  operation: create_2
+                  validationStatus: PENDING_2
+                - auditId: 100
+                  institutionId: SBP_3
+                  operation: create_3
+                  validationStatus: PENDING_3
+                - auditId: 100
+                  institutionId: SBP_4
+                  operation: create_4
+                  validationStatus: PENDING_4
+                - auditId: 100
+                  institutionId: SBP_5
+                  operation: create_5
+                  validationStatus: PENDING_5
+                - auditId: 100
+                  institutionId: SBP_6
+                  operation: create_6
+                  validationStatus: PENDING_6
+                - auditId: 100
+                  institutionId: SBP_7
+                  operation: create_7
+                  validationStatus: PENDING_7
+                - auditId: 100
+                  institutionId: SBP_8
+                  operation: create_8
+                  validationStatus: PENDING_8
+                - auditId: 100
+                  institutionId: SBP_9
+                  operation: create_9
+                  validationStatus: PENDING_9
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -921,7 +1005,22 @@ paths:
       - ValidationLogs
       summary: GET Logs List
       operationId: GET_Logs_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -990,8 +1089,35 @@ paths:
                   details: {}
                 data:
                 - logId: 2001
-                  entityType: instrument
-                  validationMessage: OK
+                  entityType: instrument_0
+                  validationMessage: OK_0
+                - logId: 2001
+                  entityType: instrument_1
+                  validationMessage: OK_1
+                - logId: 2001
+                  entityType: instrument_2
+                  validationMessage: OK_2
+                - logId: 2001
+                  entityType: instrument_3
+                  validationMessage: OK_3
+                - logId: 2001
+                  entityType: instrument_4
+                  validationMessage: OK_4
+                - logId: 2001
+                  entityType: instrument_5
+                  validationMessage: OK_5
+                - logId: 2001
+                  entityType: instrument_6
+                  validationMessage: OK_6
+                - logId: 2001
+                  entityType: instrument_7
+                  validationMessage: OK_7
+                - logId: 2001
+                  entityType: instrument_8
+                  validationMessage: OK_8
+                - logId: 2001
+                  entityType: instrument_9
+                  validationMessage: OK_9
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -1327,7 +1453,22 @@ paths:
       - Instruments
       summary: GET Instruments List
       operationId: GET_Instruments_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -1392,8 +1533,26 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - instrumentId: SBP-BND-000001
-                  name: MTB JUNE 2025
+                - instrumentId: SBP-BND-000001_0
+                  name: MTB JUNE 2025_0
+                - instrumentId: SBP-BND-000001_1
+                  name: MTB JUNE 2025_1
+                - instrumentId: SBP-BND-000001_2
+                  name: MTB JUNE 2025_2
+                - instrumentId: SBP-BND-000001_3
+                  name: MTB JUNE 2025_3
+                - instrumentId: SBP-BND-000001_4
+                  name: MTB JUNE 2025_4
+                - instrumentId: SBP-BND-000001_5
+                  name: MTB JUNE 2025_5
+                - instrumentId: SBP-BND-000001_6
+                  name: MTB JUNE 2025_6
+                - instrumentId: SBP-BND-000001_7
+                  name: MTB JUNE 2025_7
+                - instrumentId: SBP-BND-000001_8
+                  name: MTB JUNE 2025_8
+                - instrumentId: SBP-BND-000001_9
+                  name: MTB JUNE 2025_9
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
                   page: 1
@@ -2177,7 +2336,22 @@ paths:
       - Series
       summary: GET Series List
       operationId: GET_Series_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -2242,7 +2416,25 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - serieId: SBP-BND-000001
+                - serieId: SBP-BND-000001_0
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_1
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_2
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_3
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_4
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_5
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_6
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_7
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_8
+                  serieAmt: 2000000000
+                - serieId: SBP-BND-000001_9
                   serieAmt: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -2704,7 +2896,22 @@ paths:
       - Patterns
       summary: GET Patterns List
       operationId: GET_Patterns_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -2769,7 +2976,25 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - seriePatId: SBP-BND-000001
+                - seriePatId: SBP-BND-000001_0
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_1
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_2
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_3
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_4
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_5
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_6
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_7
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_8
+                  percentage: 100
+                - seriePatId: SBP-BND-000001_9
                   percentage: 100
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -3231,7 +3456,22 @@ paths:
       - InterestRateApp
       summary: GET Interest Rate App List
       operationId: GET_Interest_Rate_App_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -3296,7 +3536,25 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - intRateAppId: SBP-BND-000001-IRA-1
+                - intRateAppId: SBP-BND-000001-IRA-1_0
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_1
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_2
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_3
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_4
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_5
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_6
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_7
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_8
+                  ratePcent: 8.5
+                - intRateAppId: SBP-BND-000001-IRA-1_9
                   ratePcent: 8.5
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -3754,7 +4012,22 @@ paths:
       - Subscriptions
       summary: GET Subscriptions List
       operationId: GET_Subscriptions_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -3819,7 +4092,25 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - subscriptionId: SBP-BND-000001-SUB-1
+                - subscriptionId: SBP-BND-000001-SUB-1_0
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_1
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_2
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_3
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_4
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_5
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_6
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_7
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_8
+                  receiptsAmount: 2000000000
+                - subscriptionId: SBP-BND-000001-SUB-1_9
                   receiptsAmount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'
@@ -4547,7 +4838,22 @@ paths:
       - Payments
       summary: GET Payments List
       operationId: GET_Payments_List_get
-      parameters: []
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
       responses:
         '200':
           description: SUCCESS_200_DEFAULT
@@ -4612,7 +4918,25 @@ paths:
                   message: Operation completed ...
                   details: {}
                 data:
-                - paymentId: SBP-BND-000001-PAY-1
+                - paymentId: SBP-BND-000001-PAY-1_0
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_1
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_2
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_3
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_4
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_5
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_6
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_7
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_8
+                  amount: 2000000000
+                - paymentId: SBP-BND-000001-PAY-1_9
                   amount: 2000000000
                 meta:
                   timestamp: '2025-11-19T02:21:18Z'

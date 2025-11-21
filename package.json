@@ -1,12 +1,10 @@
 {
-  "name": "pak-middleware-mock",
-  "version": "3.5.1",
-  "description": "Prism Mock Server + Swagger UI Static",
+  "name": "prism-mock",
+  "version": "1.0.0",
   "scripts": {
-    "start": "node server.js"
+    "start": "npx prism mock openapi.yaml --cors --port $PORT --host 0.0.0.0"
   },
   "dependencies": {
-    "@stoplight/prism-cli": "4.10.5",
-    "express": "^4.18.2"
+    "@stoplight/prism-cli": "4.10.5"
   }
 }

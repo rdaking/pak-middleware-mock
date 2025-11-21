@@ -60,8 +60,8 @@ paths:
                         institutionName:
                           type: string
                       required:
-                      - institution_id
-                      - institution_name
+                      - institutionId
+                      - institutionName
                   meta:
                     type: object
                     properties:
@@ -129,15 +129,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -191,9 +191,9 @@ paths:
                       contactEmail:
                         type: string
                     required:
-                    - institution_id
-                    - institution_name
-                    - contact_email
+                    - institutionId
+                    - institutionName
+                    - contactEmail
                   meta:
                     type: object
                     properties:
@@ -262,15 +262,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -315,15 +315,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -336,7 +336,7 @@ paths:
                     datatype: institutions
                     accountableCode: ''
                     validationRule: unique
-  /institutions/{institution_id}:
+  /institutions/{institutionId}:
     get:
       tags:
       - Institutions
@@ -380,8 +380,8 @@ paths:
                       institutionName:
                         type: string
                     required:
-                    - institution_id
-                    - institution_name
+                    - institutionId
+                    - institutionName
                   meta:
                     type: object
                     properties:
@@ -484,15 +484,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -550,10 +550,10 @@ paths:
                         validationStatus:
                           type: string
                       required:
-                      - audit_id
-                      - institution_id
+                      - auditId
+                      - institutionId
                       - operation
-                      - validation_status
+                      - validationStatus
                   meta:
                     type: object
                     properties:
@@ -623,15 +623,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -685,8 +685,8 @@ paths:
                       operation:
                         type: string
                     required:
-                    - audit_id
-                    - institution_id
+                    - auditId
+                    - institutionId
                     - operation
                   meta:
                     type: object
@@ -756,15 +756,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -777,7 +777,7 @@ paths:
                     datatype: integration_audit
                     accountableCode: ''
                     validationRule: enum(create,update,delete,send)
-  /audit/{audit_id}:
+  /audit/{auditId}:
     get:
       tags:
       - IntegrationAudit
@@ -823,8 +823,8 @@ paths:
                       operation:
                         type: string
                     required:
-                    - audit_id
-                    - institution_id
+                    - auditId
+                    - institutionId
                     - operation
                   meta:
                     type: object
@@ -894,15 +894,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -958,9 +958,9 @@ paths:
                         validationMessage:
                           type: string
                       required:
-                      - log_id
-                      - entity_type
-                      - validation_message
+                      - logId
+                      - entityType
+                      - validationMessage
                   meta:
                     type: object
                     properties:
@@ -1029,15 +1029,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1091,9 +1091,9 @@ paths:
                       validationMessage:
                         type: string
                     required:
-                    - log_id
-                    - entity_type
-                    - validation_message
+                    - logId
+                    - entityType
+                    - validationMessage
                   meta:
                     type: object
                     properties:
@@ -1162,15 +1162,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1183,7 +1183,7 @@ paths:
                     datatype: validation_log
                     accountableCode: ''
                     validationRule: enum(instrument,payment,subscription,serie,rate)
-  /logs/{log_id}:
+  /logs/{logId}:
     get:
       tags:
       - ValidationLogs
@@ -1229,9 +1229,9 @@ paths:
                       validationMessage:
                         type: string
                     required:
-                    - log_id
-                    - entity_type
-                    - validation_message
+                    - logId
+                    - entityType
+                    - validationMessage
                   meta:
                     type: object
                     properties:
@@ -1300,15 +1300,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1362,7 +1362,7 @@ paths:
                         name:
                           type: string
                       required:
-                      - instrument_id
+                      - instrumentId
                       - name
                   meta:
                     type: object
@@ -1431,15 +1431,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1493,9 +1493,9 @@ paths:
                       originalInstId:
                         type: string
                     required:
-                    - instrument_id
-                    - institution_id
-                    - original_inst_id
+                    - instrumentId
+                    - institutionId
+                    - originalInstId
                   meta:
                     type: object
                     properties:
@@ -1564,15 +1564,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1617,15 +1617,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1680,12 +1680,12 @@ paths:
                           dFinalMaturity:
                             type: string
                         required:
-                        - d_final_maturity
+                        - dFinalMaturity
                       reason:
                         type: string
                     required:
-                    - instrument_id
-                    - updated_fields
+                    - instrumentId
+                    - updatedFields
                     - reason
                   meta:
                     type: object
@@ -1756,15 +1756,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1816,7 +1816,7 @@ paths:
                         instrumentId:
                           type: string
                       required:
-                      - instrument_id
+                      - instrumentId
                   meta:
                     type: object
                     properties:
@@ -1883,15 +1883,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -1904,7 +1904,7 @@ paths:
                     datatype: instruments
                     accountableCode: ''
                     validationRule: row_errors
-  /instruments/{instrument_id}:
+  /instruments/{instrumentId}:
     get:
       tags:
       - Instruments
@@ -1948,7 +1948,7 @@ paths:
                       status:
                         type: string
                     required:
-                    - instrument_id
+                    - instrumentId
                     - status
                   meta:
                     type: object
@@ -2017,15 +2017,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2081,7 +2081,7 @@ paths:
                       deleted:
                         type: boolean
                     required:
-                    - instrument_id
+                    - instrumentId
                     - deleted
                   meta:
                     type: object
@@ -2150,15 +2150,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2212,8 +2212,8 @@ paths:
                         serieAmt:
                           type: integer
                       required:
-                      - serie_id
-                      - serie_amt
+                      - serieId
+                      - serieAmt
                   meta:
                     type: object
                     properties:
@@ -2281,15 +2281,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2341,8 +2341,8 @@ paths:
                       serieAmt:
                         type: integer
                     required:
-                    - serie_id
-                    - serie_amt
+                    - serieId
+                    - serieAmt
                   meta:
                     type: object
                     properties:
@@ -2410,15 +2410,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2431,7 +2431,7 @@ paths:
                     datatype: series
                     accountableCode: ''
                     validationRule: gt_0
-  /series/{serie_id}:
+  /series/{serieId}:
     get:
       tags:
       - Series
@@ -2475,7 +2475,7 @@ paths:
                       status:
                         type: string
                     required:
-                    - serie_id
+                    - serieId
                     - status
                   meta:
                     type: object
@@ -2544,15 +2544,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2608,7 +2608,7 @@ paths:
                       deleted:
                         type: boolean
                     required:
-                    - serie_id
+                    - serieId
                     - deleted
                   meta:
                     type: object
@@ -2677,15 +2677,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2739,7 +2739,7 @@ paths:
                         percentage:
                           type: integer
                       required:
-                      - serie_pat_id
+                      - seriePatId
                       - percentage
                   meta:
                     type: object
@@ -2808,15 +2808,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2868,7 +2868,7 @@ paths:
                       percentage:
                         type: integer
                     required:
-                    - serie_pat_id
+                    - seriePatId
                     - percentage
                   meta:
                     type: object
@@ -2937,15 +2937,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -2958,7 +2958,7 @@ paths:
                     datatype: serie_patterns
                     accountableCode: ''
                     validationRule: date_format
-  /series/patterns/{pattern_id}:
+  /series/patterns/{patternId}:
     get:
       tags:
       - Patterns
@@ -3002,7 +3002,7 @@ paths:
                       status:
                         type: string
                     required:
-                    - serie_pat_id
+                    - seriePatId
                     - status
                   meta:
                     type: object
@@ -3071,15 +3071,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3135,7 +3135,7 @@ paths:
                       deleted:
                         type: boolean
                     required:
-                    - serie_pat_id
+                    - seriePatId
                     - deleted
                   meta:
                     type: object
@@ -3204,15 +3204,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3266,8 +3266,8 @@ paths:
                         ratePcent:
                           type: number
                       required:
-                      - int_rate_app_id
-                      - rate_pcent
+                      - intRateAppId
+                      - ratePcent
                   meta:
                     type: object
                     properties:
@@ -3335,15 +3335,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3395,8 +3395,8 @@ paths:
                       ratePcent:
                         type: number
                     required:
-                    - int_rate_app_id
-                    - rate_pcent
+                    - intRateAppId
+                    - ratePcent
                   meta:
                     type: object
                     properties:
@@ -3464,15 +3464,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3485,7 +3485,7 @@ paths:
                     datatype: int_rate_application
                     accountableCode: ''
                     validationRule: gt_0
-  /series/interest-application/{int_rate_app_id}:
+  /series/interest-application/{intRateAppId}:
     get:
       tags:
       - InterestRateApp
@@ -3527,7 +3527,7 @@ paths:
                       intRateAppId:
                         type: string
                     required:
-                    - int_rate_app_id
+                    - intRateAppId
                   meta:
                     type: object
                     properties:
@@ -3594,15 +3594,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3658,7 +3658,7 @@ paths:
                       deleted:
                         type: boolean
                     required:
-                    - int_rate_app_id
+                    - intRateAppId
                     - deleted
                   meta:
                     type: object
@@ -3727,15 +3727,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3789,8 +3789,8 @@ paths:
                         receiptsAmount:
                           type: integer
                       required:
-                      - subscription_id
-                      - receipts_amount
+                      - subscriptionId
+                      - receiptsAmount
                   meta:
                     type: object
                     properties:
@@ -3858,15 +3858,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -3918,8 +3918,8 @@ paths:
                       receiptsAmount:
                         type: integer
                     required:
-                    - subscription_id
-                    - receipts_amount
+                    - subscriptionId
+                    - receiptsAmount
                   meta:
                     type: object
                     properties:
@@ -3987,15 +3987,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4050,12 +4050,12 @@ paths:
                           receiptsAmount:
                             type: integer
                         required:
-                        - receipts_amount
+                        - receiptsAmount
                       reason:
                         type: string
                     required:
-                    - subscription_id
-                    - updated_fields
+                    - subscriptionId
+                    - updatedFields
                     - reason
                   meta:
                     type: object
@@ -4126,15 +4126,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4188,8 +4188,8 @@ paths:
                         receiptsAmount:
                           type: integer
                       required:
-                      - subscription_id
-                      - receipts_amount
+                      - subscriptionId
+                      - receiptsAmount
                   meta:
                     type: object
                     properties:
@@ -4257,15 +4257,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4278,7 +4278,7 @@ paths:
                     datatype: subscriptions
                     accountableCode: ''
                     validationRule: row_errors
-  /series/subscriptions/{subscription_id}:
+  /series/subscriptions/{subscriptionId}:
     get:
       tags:
       - Subscriptions
@@ -4320,7 +4320,7 @@ paths:
                       subscriptionId:
                         type: string
                     required:
-                    - subscription_id
+                    - subscriptionId
                   meta:
                     type: object
                     properties:
@@ -4387,15 +4387,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4451,7 +4451,7 @@ paths:
                       deleted:
                         type: boolean
                     required:
-                    - subscription_id
+                    - subscriptionId
                     - deleted
                   meta:
                     type: object
@@ -4520,15 +4520,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4582,7 +4582,7 @@ paths:
                         amount:
                           type: integer
                       required:
-                      - payment_id
+                      - paymentId
                       - amount
                   meta:
                     type: object
@@ -4651,15 +4651,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4711,7 +4711,7 @@ paths:
                       amount:
                         type: integer
                     required:
-                    - payment_id
+                    - paymentId
                     - amount
                   meta:
                     type: object
@@ -4780,15 +4780,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4847,8 +4847,8 @@ paths:
                       reason:
                         type: string
                     required:
-                    - payment_id
-                    - updated_fields
+                    - paymentId
+                    - updatedFields
                     - reason
                   meta:
                     type: object
@@ -4919,15 +4919,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -4940,7 +4940,7 @@ paths:
                     datatype: payments
                     accountableCode: ''
                     validationRule: must_exist
-  /series/payments/{payment_id}:
+  /series/payments/{paymentId}:
     get:
       tags:
       - Payments
@@ -4984,7 +4984,7 @@ paths:
                       amount:
                         type: integer
                     required:
-                    - payment_id
+                    - paymentId
                     - amount
                   meta:
                     type: object
@@ -5053,15 +5053,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -5117,7 +5117,7 @@ paths:
                       deleted:
                         type: boolean
                     required:
-                    - payment_id
+                    - paymentId
                     - deleted
                   meta:
                     type: object
@@ -5186,15 +5186,15 @@ paths:
                         required:
                         - field
                         - datatype
-                        - accountable_code
-                        - validation_rule
+                        - accountableCode
+                        - validationRule
                     required:
                     - code
                     - message
                     - details
                 required:
                 - success
-                - id_key
+                - idKey
                 - result
               example:
                 success: false
@@ -5209,7 +5209,7 @@ paths:
                     validationRule: cannot_delete_reconciled
 components:
   schemas:
-    GET_Institutions_List_200:
+    GETInstitutionsList200:
       type: object
       properties:
         success:
@@ -5233,13 +5233,13 @@ components:
           items:
             type: object
             properties:
-              institution_id:
+              institutionId:
                 type: string
-              institution_name:
+              institutionName:
                 type: string
             required:
-            - institution_id
-            - institution_name
+            - institutionId
+            - institutionName
         meta:
           type: object
           properties:
@@ -5261,12 +5261,12 @@ components:
       - result
       - data
       - meta
-    GET_Institutions_List_422:
+    GETInstitutionsList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5282,24 +5282,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Institution_200:
+    POSTCreateUpdateInstitution200:
       type: object
       properties:
         success:
@@ -5321,16 +5321,16 @@ components:
         data:
           type: object
           properties:
-            institution_id:
+            institutionId:
               type: string
-            institution_name:
+            institutionName:
               type: string
-            contact_email:
+            contactEmail:
               type: string
           required:
-          - institution_id
-          - institution_name
-          - contact_email
+          - institutionId
+          - institutionName
+          - contactEmail
         meta:
           type: object
           properties:
@@ -5352,12 +5352,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Institution_422:
+    POSTCreateUpdateInstitution422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5373,29 +5373,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Institution_422_v1:
+    POSTCreateUpdateInstitution422V1:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5411,29 +5411,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Institution_409:
+    POSTCreateUpdateInstitution409:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5449,24 +5449,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Institution_200:
+    GETSingleInstitution200:
       type: object
       properties:
         success:
@@ -5488,13 +5488,13 @@ components:
         data:
           type: object
           properties:
-            institution_id:
+            institutionId:
               type: string
-            institution_name:
+            institutionName:
               type: string
           required:
-          - institution_id
-          - institution_name
+          - institutionId
+          - institutionName
         meta:
           type: object
           properties:
@@ -5516,12 +5516,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Institution_422:
+    GETSingleInstitution422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5537,24 +5537,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Audit_List_200:
+    GETAuditList200:
       type: object
       properties:
         success:
@@ -5578,19 +5578,19 @@ components:
           items:
             type: object
             properties:
-              audit_id:
+              auditId:
                 type: integer
-              institution_id:
+              institutionId:
                 type: string
               operation:
                 type: string
-              validation_status:
+              validationStatus:
                 type: string
             required:
-            - audit_id
-            - institution_id
+            - auditId
+            - institutionId
             - operation
-            - validation_status
+            - validationStatus
         meta:
           type: object
           properties:
@@ -5612,12 +5612,12 @@ components:
       - result
       - data
       - meta
-    GET_Audit_List_422:
+    GETAuditList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5633,24 +5633,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Audit_200:
+    POSTCreateUpdateAudit200:
       type: object
       properties:
         success:
@@ -5672,15 +5672,15 @@ components:
         data:
           type: object
           properties:
-            audit_id:
+            auditId:
               type: integer
-            institution_id:
+            institutionId:
               type: string
             operation:
               type: string
           required:
-          - audit_id
-          - institution_id
+          - auditId
+          - institutionId
           - operation
         meta:
           type: object
@@ -5703,12 +5703,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Audit_422:
+    POSTCreateUpdateAudit422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5724,24 +5724,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Audit_200:
+    GETSingleAudit200:
       type: object
       properties:
         success:
@@ -5763,15 +5763,15 @@ components:
         data:
           type: object
           properties:
-            audit_id:
+            auditId:
               type: integer
-            institution_id:
+            institutionId:
               type: string
             operation:
               type: string
           required:
-          - audit_id
-          - institution_id
+          - auditId
+          - institutionId
           - operation
         meta:
           type: object
@@ -5794,12 +5794,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Audit_422:
+    GETSingleAudit422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5815,24 +5815,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Logs_List_200:
+    GETLogsList200:
       type: object
       properties:
         success:
@@ -5856,16 +5856,16 @@ components:
           items:
             type: object
             properties:
-              log_id:
+              logId:
                 type: integer
-              entity_type:
+              entityType:
                 type: string
-              validation_message:
+              validationMessage:
                 type: string
             required:
-            - log_id
-            - entity_type
-            - validation_message
+            - logId
+            - entityType
+            - validationMessage
         meta:
           type: object
           properties:
@@ -5887,12 +5887,12 @@ components:
       - result
       - data
       - meta
-    GET_Logs_List_422:
+    GETLogsList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5908,24 +5908,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Log_200:
+    POSTCreateUpdateLog200:
       type: object
       properties:
         success:
@@ -5947,16 +5947,16 @@ components:
         data:
           type: object
           properties:
-            log_id:
+            logId:
               type: integer
-            entity_type:
+            entityType:
               type: string
-            validation_message:
+            validationMessage:
               type: string
           required:
-          - log_id
-          - entity_type
-          - validation_message
+          - logId
+          - entityType
+          - validationMessage
         meta:
           type: object
           properties:
@@ -5978,12 +5978,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Log_422:
+    POSTCreateUpdateLog422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -5999,24 +5999,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Log_200:
+    GETSingleLog200:
       type: object
       properties:
         success:
@@ -6038,16 +6038,16 @@ components:
         data:
           type: object
           properties:
-            log_id:
+            logId:
               type: integer
-            entity_type:
+            entityType:
               type: string
-            validation_message:
+            validationMessage:
               type: string
           required:
-          - log_id
-          - entity_type
-          - validation_message
+          - logId
+          - entityType
+          - validationMessage
         meta:
           type: object
           properties:
@@ -6069,12 +6069,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Log_422:
+    GETSingleLog422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6090,24 +6090,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Instruments_List_200:
+    GETInstrumentsList200:
       type: object
       properties:
         success:
@@ -6131,12 +6131,12 @@ components:
           items:
             type: object
             properties:
-              instrument_id:
+              instrumentId:
                 type: string
               name:
                 type: string
             required:
-            - instrument_id
+            - instrumentId
             - name
         meta:
           type: object
@@ -6159,12 +6159,12 @@ components:
       - result
       - data
       - meta
-    GET_Instruments_List_422:
+    GETInstrumentsList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6180,24 +6180,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Instrument_200:
+    POSTCreateUpdateInstrument200:
       type: object
       properties:
         success:
@@ -6219,16 +6219,16 @@ components:
         data:
           type: object
           properties:
-            instrument_id:
+            instrumentId:
               type: string
-            institution_id:
+            institutionId:
               type: string
-            original_inst_id:
+            originalInstId:
               type: string
           required:
-          - instrument_id
-          - institution_id
-          - original_inst_id
+          - instrumentId
+          - institutionId
+          - originalInstId
         meta:
           type: object
           properties:
@@ -6250,12 +6250,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Instrument_422:
+    POSTCreateUpdateInstrument422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6271,29 +6271,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Instrument_422_v1:
+    POSTCreateUpdateInstrument422V1:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6309,29 +6309,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Instrument_422_v2:
+    POSTCreateUpdateInstrument422V2:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6347,29 +6347,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Instrument_422_v3:
+    POSTCreateUpdateInstrument422V3:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6385,29 +6385,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Instrument_409:
+    POSTCreateUpdateInstrument409:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6423,24 +6423,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Update_Request_200:
+    POSTUpdateRequest200:
       type: object
       properties:
         success:
@@ -6462,20 +6462,20 @@ components:
         data:
           type: object
           properties:
-            instrument_id:
+            instrumentId:
               type: string
-            updated_fields:
+            updatedFields:
               type: object
               properties:
-                d_final_maturity:
+                dFinalMaturity:
                   type: string
               required:
-              - d_final_maturity
+              - dFinalMaturity
             reason:
               type: string
           required:
-          - instrument_id
-          - updated_fields
+          - instrumentId
+          - updatedFields
           - reason
         meta:
           type: object
@@ -6498,12 +6498,12 @@ components:
       - result
       - data
       - meta
-    POST_Update_Request_422:
+    POSTUpdateRequest422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6519,24 +6519,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Bulk_Create_Instruments_200:
+    POSTBulkCreateInstruments200:
       type: object
       properties:
         success:
@@ -6560,10 +6560,10 @@ components:
           items:
             type: object
             properties:
-              instrument_id:
+              instrumentId:
                 type: string
             required:
-            - instrument_id
+            - instrumentId
         meta:
           type: object
           properties:
@@ -6585,12 +6585,12 @@ components:
       - result
       - data
       - meta
-    POST_Bulk_Create_Instruments_422:
+    POSTBulkCreateInstruments422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6606,24 +6606,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Instrument_200:
+    GETSingleInstrument200:
       type: object
       properties:
         success:
@@ -6645,12 +6645,12 @@ components:
         data:
           type: object
           properties:
-            instrument_id:
+            instrumentId:
               type: string
             status:
               type: string
           required:
-          - instrument_id
+          - instrumentId
           - status
         meta:
           type: object
@@ -6673,12 +6673,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Instrument_422:
+    GETSingleInstrument422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6694,24 +6694,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    DELETE_Instrument_200:
+    DELETEInstrument200:
       type: object
       properties:
         success:
@@ -6733,12 +6733,12 @@ components:
         data:
           type: object
           properties:
-            instrument_id:
+            instrumentId:
               type: string
             deleted:
               type: boolean
           required:
-          - instrument_id
+          - instrumentId
           - deleted
         meta:
           type: object
@@ -6761,12 +6761,12 @@ components:
       - result
       - data
       - meta
-    DELETE_Instrument_422:
+    DELETEInstrument422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6782,24 +6782,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Series_List_200:
+    GETSeriesList200:
       type: object
       properties:
         success:
@@ -6823,13 +6823,13 @@ components:
           items:
             type: object
             properties:
-              serie_id:
+              serieId:
                 type: string
-              serie_amt:
+              serieAmt:
                 type: integer
             required:
-            - serie_id
-            - serie_amt
+            - serieId
+            - serieAmt
         meta:
           type: object
           properties:
@@ -6851,12 +6851,12 @@ components:
       - result
       - data
       - meta
-    GET_Series_List_422:
+    GETSeriesList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6872,24 +6872,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Serie_200:
+    POSTCreateUpdateSerie200:
       type: object
       properties:
         success:
@@ -6911,13 +6911,13 @@ components:
         data:
           type: object
           properties:
-            serie_id:
+            serieId:
               type: string
-            serie_amt:
+            serieAmt:
               type: integer
           required:
-          - serie_id
-          - serie_amt
+          - serieId
+          - serieAmt
         meta:
           type: object
           properties:
@@ -6939,12 +6939,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Serie_422:
+    POSTCreateUpdateSerie422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -6960,24 +6960,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Serie_200:
+    GETSingleSerie200:
       type: object
       properties:
         success:
@@ -6999,12 +6999,12 @@ components:
         data:
           type: object
           properties:
-            serie_id:
+            serieId:
               type: string
             status:
               type: string
           required:
-          - serie_id
+          - serieId
           - status
         meta:
           type: object
@@ -7027,12 +7027,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Serie_422:
+    GETSingleSerie422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7048,24 +7048,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    DELETE_Serie_200:
+    DELETESerie200:
       type: object
       properties:
         success:
@@ -7087,12 +7087,12 @@ components:
         data:
           type: object
           properties:
-            serie_id:
+            serieId:
               type: string
             deleted:
               type: boolean
           required:
-          - serie_id
+          - serieId
           - deleted
         meta:
           type: object
@@ -7115,12 +7115,12 @@ components:
       - result
       - data
       - meta
-    DELETE_Serie_422:
+    DELETESerie422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7136,24 +7136,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Patterns_List_200:
+    GETPatternsList200:
       type: object
       properties:
         success:
@@ -7177,12 +7177,12 @@ components:
           items:
             type: object
             properties:
-              serie_pat_id:
+              seriePatId:
                 type: string
               percentage:
                 type: integer
             required:
-            - serie_pat_id
+            - seriePatId
             - percentage
         meta:
           type: object
@@ -7205,12 +7205,12 @@ components:
       - result
       - data
       - meta
-    GET_Patterns_List_422:
+    GETPatternsList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7226,24 +7226,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Pattern_200:
+    POSTCreateUpdatePattern200:
       type: object
       properties:
         success:
@@ -7265,12 +7265,12 @@ components:
         data:
           type: object
           properties:
-            serie_pat_id:
+            seriePatId:
               type: string
             percentage:
               type: integer
           required:
-          - serie_pat_id
+          - seriePatId
           - percentage
         meta:
           type: object
@@ -7293,12 +7293,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Pattern_422:
+    POSTCreateUpdatePattern422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7314,24 +7314,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Pattern_200:
+    GETSinglePattern200:
       type: object
       properties:
         success:
@@ -7353,12 +7353,12 @@ components:
         data:
           type: object
           properties:
-            serie_pat_id:
+            seriePatId:
               type: string
             status:
               type: string
           required:
-          - serie_pat_id
+          - seriePatId
           - status
         meta:
           type: object
@@ -7381,12 +7381,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Pattern_422:
+    GETSinglePattern422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7402,24 +7402,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    DELETE_Pattern_200:
+    DELETEPattern200:
       type: object
       properties:
         success:
@@ -7441,12 +7441,12 @@ components:
         data:
           type: object
           properties:
-            serie_pat_id:
+            seriePatId:
               type: string
             deleted:
               type: boolean
           required:
-          - serie_pat_id
+          - seriePatId
           - deleted
         meta:
           type: object
@@ -7469,12 +7469,12 @@ components:
       - result
       - data
       - meta
-    DELETE_Pattern_422:
+    DELETEPattern422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7490,24 +7490,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Interest_Rate_App_List_200:
+    GETInterestRateAppList200:
       type: object
       properties:
         success:
@@ -7531,13 +7531,13 @@ components:
           items:
             type: object
             properties:
-              int_rate_app_id:
+              intRateAppId:
                 type: string
-              rate_pcent:
+              ratePcent:
                 type: number
             required:
-            - int_rate_app_id
-            - rate_pcent
+            - intRateAppId
+            - ratePcent
         meta:
           type: object
           properties:
@@ -7559,12 +7559,12 @@ components:
       - result
       - data
       - meta
-    GET_Interest_Rate_App_List_422:
+    GETInterestRateAppList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7580,24 +7580,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Interest_Rate_App_200:
+    POSTCreateUpdateInterestRateApp200:
       type: object
       properties:
         success:
@@ -7619,13 +7619,13 @@ components:
         data:
           type: object
           properties:
-            int_rate_app_id:
+            intRateAppId:
               type: string
-            rate_pcent:
+            ratePcent:
               type: number
           required:
-          - int_rate_app_id
-          - rate_pcent
+          - intRateAppId
+          - ratePcent
         meta:
           type: object
           properties:
@@ -7647,12 +7647,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Interest_Rate_App_422:
+    POSTCreateUpdateInterestRateApp422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7668,24 +7668,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Interest_Rate_App_200:
+    GETSingleInterestRateApp200:
       type: object
       properties:
         success:
@@ -7707,10 +7707,10 @@ components:
         data:
           type: object
           properties:
-            int_rate_app_id:
+            intRateAppId:
               type: string
           required:
-          - int_rate_app_id
+          - intRateAppId
         meta:
           type: object
           properties:
@@ -7732,12 +7732,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Interest_Rate_App_422:
+    GETSingleInterestRateApp422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7753,24 +7753,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    DELETE_Interest_Rate_App_200:
+    DELETEInterestRateApp200:
       type: object
       properties:
         success:
@@ -7792,12 +7792,12 @@ components:
         data:
           type: object
           properties:
-            int_rate_app_id:
+            intRateAppId:
               type: string
             deleted:
               type: boolean
           required:
-          - int_rate_app_id
+          - intRateAppId
           - deleted
         meta:
           type: object
@@ -7820,12 +7820,12 @@ components:
       - result
       - data
       - meta
-    DELETE_Interest_Rate_App_422:
+    DELETEInterestRateApp422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7841,24 +7841,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Subscriptions_List_200:
+    GETSubscriptionsList200:
       type: object
       properties:
         success:
@@ -7882,13 +7882,13 @@ components:
           items:
             type: object
             properties:
-              subscription_id:
+              subscriptionId:
                 type: string
-              receipts_amount:
+              receiptsAmount:
                 type: integer
             required:
-            - subscription_id
-            - receipts_amount
+            - subscriptionId
+            - receiptsAmount
         meta:
           type: object
           properties:
@@ -7910,12 +7910,12 @@ components:
       - result
       - data
       - meta
-    GET_Subscriptions_List_422:
+    GETSubscriptionsList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -7931,24 +7931,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Subscription_200:
+    POSTCreateUpdateSubscription200:
       type: object
       properties:
         success:
@@ -7970,13 +7970,13 @@ components:
         data:
           type: object
           properties:
-            subscription_id:
+            subscriptionId:
               type: string
-            receipts_amount:
+            receiptsAmount:
               type: integer
           required:
-          - subscription_id
-          - receipts_amount
+          - subscriptionId
+          - receiptsAmount
         meta:
           type: object
           properties:
@@ -7998,12 +7998,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Subscription_422:
+    POSTCreateUpdateSubscription422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8019,29 +8019,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Subscription_422_v1:
+    POSTCreateUpdateSubscription422V1:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8057,24 +8057,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Subscription_Update_Request_200:
+    POSTSubscriptionUpdateRequest200:
       type: object
       properties:
         success:
@@ -8096,20 +8096,20 @@ components:
         data:
           type: object
           properties:
-            subscription_id:
+            subscriptionId:
               type: string
-            updated_fields:
+            updatedFields:
               type: object
               properties:
-                receipts_amount:
+                receiptsAmount:
                   type: integer
               required:
-              - receipts_amount
+              - receiptsAmount
             reason:
               type: string
           required:
-          - subscription_id
-          - updated_fields
+          - subscriptionId
+          - updatedFields
           - reason
         meta:
           type: object
@@ -8132,12 +8132,12 @@ components:
       - result
       - data
       - meta
-    POST_Subscription_Update_Request_422:
+    POSTSubscriptionUpdateRequest422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8153,24 +8153,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Bulk_Create_Subscriptions_200:
+    POSTBulkCreateSubscriptions200:
       type: object
       properties:
         success:
@@ -8194,13 +8194,13 @@ components:
           items:
             type: object
             properties:
-              subscription_id:
+              subscriptionId:
                 type: string
-              receipts_amount:
+              receiptsAmount:
                 type: integer
             required:
-            - subscription_id
-            - receipts_amount
+            - subscriptionId
+            - receiptsAmount
         meta:
           type: object
           properties:
@@ -8222,12 +8222,12 @@ components:
       - result
       - data
       - meta
-    POST_Bulk_Create_Subscriptions_422:
+    POSTBulkCreateSubscriptions422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8243,24 +8243,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Subscription_200:
+    GETSingleSubscription200:
       type: object
       properties:
         success:
@@ -8282,10 +8282,10 @@ components:
         data:
           type: object
           properties:
-            subscription_id:
+            subscriptionId:
               type: string
           required:
-          - subscription_id
+          - subscriptionId
         meta:
           type: object
           properties:
@@ -8307,12 +8307,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Subscription_422:
+    GETSingleSubscription422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8328,24 +8328,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    DELETE_Subscription_200:
+    DELETESubscription200:
       type: object
       properties:
         success:
@@ -8367,12 +8367,12 @@ components:
         data:
           type: object
           properties:
-            subscription_id:
+            subscriptionId:
               type: string
             deleted:
               type: boolean
           required:
-          - subscription_id
+          - subscriptionId
           - deleted
         meta:
           type: object
@@ -8395,12 +8395,12 @@ components:
       - result
       - data
       - meta
-    DELETE_Subscription_422:
+    DELETESubscription422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8416,24 +8416,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Payments_List_200:
+    GETPaymentsList200:
       type: object
       properties:
         success:
@@ -8457,12 +8457,12 @@ components:
           items:
             type: object
             properties:
-              payment_id:
+              paymentId:
                 type: string
               amount:
                 type: integer
             required:
-            - payment_id
+            - paymentId
             - amount
         meta:
           type: object
@@ -8485,12 +8485,12 @@ components:
       - result
       - data
       - meta
-    GET_Payments_List_422:
+    GETPaymentsList422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8506,24 +8506,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Payment_200:
+    POSTCreateUpdatePayment200:
       type: object
       properties:
         success:
@@ -8545,12 +8545,12 @@ components:
         data:
           type: object
           properties:
-            payment_id:
+            paymentId:
               type: string
             amount:
               type: integer
           required:
-          - payment_id
+          - paymentId
           - amount
         meta:
           type: object
@@ -8573,12 +8573,12 @@ components:
       - result
       - data
       - meta
-    POST_Create_Update_Payment_422:
+    POSTCreateUpdatePayment422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8594,29 +8594,29 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Create_Update_Payment_422_v1:
+    POSTCreateUpdatePayment422V1:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8632,24 +8632,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    POST_Payment_Update_Request_200:
+    POSTPaymentUpdateRequest200:
       type: object
       properties:
         success:
@@ -8671,9 +8671,9 @@ components:
         data:
           type: object
           properties:
-            payment_id:
+            paymentId:
               type: string
-            updated_fields:
+            updatedFields:
               type: object
               properties:
                 amount:
@@ -8683,8 +8683,8 @@ components:
             reason:
               type: string
           required:
-          - payment_id
-          - updated_fields
+          - paymentId
+          - updatedFields
           - reason
         meta:
           type: object
@@ -8707,12 +8707,12 @@ components:
       - result
       - data
       - meta
-    POST_Payment_Update_Request_422:
+    POSTPaymentUpdateRequest422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8728,24 +8728,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    GET_Single_Payment_200:
+    GETSinglePayment200:
       type: object
       properties:
         success:
@@ -8767,12 +8767,12 @@ components:
         data:
           type: object
           properties:
-            payment_id:
+            paymentId:
               type: string
             amount:
               type: integer
           required:
-          - payment_id
+          - paymentId
           - amount
         meta:
           type: object
@@ -8795,12 +8795,12 @@ components:
       - result
       - data
       - meta
-    GET_Single_Payment_422:
+    GETSinglePayment422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8816,24 +8816,24 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result
-    DELETE_Payment_200:
+    DELETEPayment200:
       type: object
       properties:
         success:
@@ -8855,12 +8855,12 @@ components:
         data:
           type: object
           properties:
-            payment_id:
+            paymentId:
               type: string
             deleted:
               type: boolean
           required:
-          - payment_id
+          - paymentId
           - deleted
         meta:
           type: object
@@ -8883,12 +8883,12 @@ components:
       - result
       - data
       - meta
-    DELETE_Payment_422:
+    DELETEPayment422:
       type: object
       properties:
         success:
           type: boolean
-        id_key:
+        idKey:
           type: string
         result:
           type: object
@@ -8904,20 +8904,20 @@ components:
                   type: string
                 datatype:
                   type: string
-                accountable_code:
+                accountableCode:
                   type: string
-                validation_rule:
+                validationRule:
                   type: string
               required:
               - field
               - datatype
-              - accountable_code
-              - validation_rule
+              - accountableCode
+              - validationRule
           required:
           - code
           - message
           - details
       required:
       - success
-      - id_key
+      - idKey
       - result

@@ -336,7 +336,7 @@ paths:
                     datatype: institutions
                     accountableCode: ''
                     validationRule: unique
-  /institutions/{institutionId}:
+  /institutions/{institution_id}:
     get:
       tags:
       - Institutions
@@ -777,7 +777,7 @@ paths:
                     datatype: integration_audit
                     accountableCode: ''
                     validationRule: enum(create,update,delete,send)
-  /audit/{auditId}:
+  /audit/{audit_id}:
     get:
       tags:
       - IntegrationAudit
@@ -1183,7 +1183,7 @@ paths:
                     datatype: validation_log
                     accountableCode: ''
                     validationRule: enum(instrument,payment,subscription,serie,rate)
-  /logs/{logId}:
+  /logs/{log_id}:
     get:
       tags:
       - ValidationLogs
@@ -1904,7 +1904,7 @@ paths:
                     datatype: instruments
                     accountableCode: ''
                     validationRule: row_errors
-  /instruments/{instrumentId}:
+  /instruments/{instrument_id}:
     get:
       tags:
       - Instruments
@@ -2431,7 +2431,7 @@ paths:
                     datatype: series
                     accountableCode: ''
                     validationRule: gt_0
-  /series/{serieId}:
+  /series/{serie_id}:
     get:
       tags:
       - Series
@@ -2958,7 +2958,7 @@ paths:
                     datatype: serie_patterns
                     accountableCode: ''
                     validationRule: date_format
-  /series/patterns/{patternId}:
+  /series/patterns/{pattern_id}:
     get:
       tags:
       - Patterns
@@ -3485,7 +3485,7 @@ paths:
                     datatype: int_rate_application
                     accountableCode: ''
                     validationRule: gt_0
-  /series/interest-application/{intRateAppId}:
+  /series/interest-application/{int_rate_app_id}:
     get:
       tags:
       - InterestRateApp
@@ -4278,7 +4278,7 @@ paths:
                     datatype: subscriptions
                     accountableCode: ''
                     validationRule: row_errors
-  /series/subscriptions/{subscriptionId}:
+  /series/subscriptions/{subscription_id}:
     get:
       tags:
       - Subscriptions
@@ -4940,7 +4940,7 @@ paths:
                     datatype: payments
                     accountableCode: ''
                     validationRule: must_exist
-  /series/payments/{paymentId}:
+  /series/payments/{payment_id}:
     get:
       tags:
       - Payments
